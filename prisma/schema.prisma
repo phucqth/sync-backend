@@ -1,1337 +1,1312 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "app/generated/prisma/client"
+    provider = "prisma-client-js"
+    output   = "app/generated/prisma/client"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model tbl_18_customer {
-  no                    String    @id @db.VarChar(20)
-  name                  String?   @db.VarChar(100)
-  search_name           String?   @db.VarChar(100)
-  name_2                String?   @db.VarChar(50)
-  address               String?   @db.VarChar(100)
-  address_2             String?   @db.VarChar(50)
-  city                  String?   @db.VarChar(30)
-  contact               String?   @db.VarChar(100)
-  phone_no              String?   @db.VarChar(30)
-  telex_no              String?   @db.VarChar(20)
-  shipto_code           String?   @db.VarChar(10)
-  currency_code         String?   @db.VarChar(10)
-  language_code         String?   @db.VarChar(10)
-  salesperson_code      String?   @db.VarChar(20)
-  shipment_method_code  String?   @db.VarChar(10)
-  blocked               String?   @db.VarChar(20)
-  billto_customer_no    String?   @db.VarChar(20)
-  payment_method_code   String?   @db.VarChar(10)
-  location_code         String?   @db.VarChar(10)
-  fax_no                String?   @db.VarChar(30)
-  gen_bus_posting_group String?   @db.VarChar(20)
-  e_mail                String?   @db.VarChar(80)
-  primary_contact_no    String?   @db.VarChar(20)
-  contact_type          String?   @db.VarChar(20)
-  mobile_phone_no       String?   @db.VarChar(30)
-  responsibility_center String?   @db.VarChar(10)
-  base_calendar_code    String?   @db.VarChar(10)
-  currency_id           String?   @db.VarChar(255)
-  system_modified_at    DateTime? @db.DateTime(0)
-  system_id             String?   @db.VarChar(255)
+    no                    String    @id @db.VarChar(20)
+    name                  String?   @db.VarChar(100)
+    search_name           String?   @db.VarChar(100)
+    name_2                String?   @db.VarChar(50)
+    address               String?   @db.VarChar(100)
+    address_2             String?   @db.VarChar(50)
+    city                  String?   @db.VarChar(30)
+    contact               String?   @db.VarChar(100)
+    phone_no              String?   @db.VarChar(30)
+    telex_no              String?   @db.VarChar(20)
+    shipto_code           String?   @db.VarChar(10)
+    currency_code         String?   @db.VarChar(10)
+    language_code         String?   @db.VarChar(10)
+    salesperson_code      String?   @db.VarChar(20)
+    shipment_method_code  String?   @db.VarChar(10)
+    blocked               String?   @db.VarChar(20)
+    billto_customer_no    String?   @db.VarChar(20)
+    payment_method_code   String?   @db.VarChar(10)
+    location_code         String?   @db.VarChar(10)
+    fax_no                String?   @db.VarChar(30)
+    gen_bus_posting_group String?   @db.VarChar(20)
+    e_mail                String?   @db.VarChar(80)
+    primary_contact_no    String?   @db.VarChar(20)
+    contact_type          String?   @db.VarChar(20)
+    mobile_phone_no       String?   @db.VarChar(30)
+    responsibility_center String?   @db.VarChar(10)
+    base_calendar_code    String?   @db.VarChar(10)
+    currency_id           String?   @db.VarChar(255)
+    system_modified_at    DateTime? @db.DateTime(0)
+    system_id             String?   @db.VarChar(255)
 }
 
 model tbl_27_item {
-  no                           String    @id @db.VarChar(20)
-  no_2                         String?   @db.VarChar(20)
-  description                  String?   @db.VarChar(100)
-  search_description           String?   @db.VarChar(100)
-  description_2                String?   @db.VarChar(50)
-  base_unitof_measure          String?   @db.VarChar(10)
-  type                         Int?
-  shelf_no                     String?   @db.VarChar(10)
-  costing_method               Int?      @db.TinyInt
-  unit_cost                    Decimal?  @db.Decimal(12, 0)
-  standard_cost                Decimal?  @db.Decimal(12, 0)
-  vendor_no                    String?   @db.VarChar(20)
-  vendor_item_no               String?   @db.VarChar(50)
-  lead_time_calculation        String?   @db.VarChar(32)
-  reorder_point                Decimal?  @db.Decimal(12, 0)
-  maximum_inventory            Decimal?  @db.Decimal(12, 0)
-  reorder_quantity             Decimal?  @db.Decimal(12, 0)
-  alternative_item_no          String?   @db.VarChar(20)
-  gross_weight                 Decimal?  @db.Decimal(12, 0)
-  net_weight                   Decimal?  @db.Decimal(12, 0)
-  unitsper_parcel              Decimal?  @db.Decimal(12, 0)
-  unit_volume                  Decimal?  @db.Decimal(12, 0)
-  blocked                      Boolean?
-  block_reason                 String?   @db.VarChar(250)
-  lot_size                     Decimal?  @db.Decimal(12, 0)
-  serial_nos                   String?   @db.VarChar(20)
-  scrap                        Decimal?  @db.Decimal(12, 0)
-  minimum_order_quantity       Decimal?  @db.Decimal(12, 0)
-  maximum_order_quantity       Decimal?  @db.Decimal(12, 0)
-  safety_stock_quantity        Decimal?  @db.Decimal(12, 0)
-  order_multiple               Decimal?  @db.Decimal(12, 0)
-  safety_lead_time             String?   @db.VarChar(32)
-  flushing_method              Int?      @db.TinyInt
-  replenishment_system         Int?      @db.TinyInt
-  sales_unitof_measure         String?   @db.VarChar(10)
-  purch_unitof_measure         String?   @db.VarChar(10)
-  reordering_policy            Int?      @db.TinyInt
-  manufacturing_policy         Int?      @db.TinyInt
-  rescheduling_period          String?   @db.VarChar(32)
-  lot_accumulation_period      String?   @db.VarChar(32)
-  stockkeeping_unit_exists     Boolean?
-  item_category_code           String?   @db.VarChar(20)
-  substitutes_exist            Boolean?
-  item_tracking_code           String?   @db.VarChar(10)
-  lot_nos                      String?   @db.VarChar(20)
-  expiration_calculation       String?   @db.VarChar(32)
-  bsvvas_name                  String?   @db.VarChar(250)
-  bsvacca_spec_of_product      String?   @db.VarChar(50)
-  bsvacca_purch_std_cost_price Boolean?
-  bsvacca_graphic_order_sheet  String?   @db.VarChar(50)
-  bsvacca_spec_of_material     String?   @db.VarChar(50)
-  bsvacca_standard_of_product  String?   @db.VarChar(50)
-  bsvacca_item_type            Int?
-  routing_no                   String?   @db.VarChar(20)
-  production_bom_no            String?   @db.VarChar(20)
-  originalUnitOfMeasure        String?   @db.VarChar(20)
-  itemType                     String?   @db.VarChar(50)
-  densityKgM                   Decimal?  @db.Decimal(10, 0)
-  convertFactorM2ToPouch       Decimal?  @db.Decimal(10, 0)
-  specificationOfProduct       String?   @db.VarChar(120)
-  convertFactorToMD            Decimal?  @db.Decimal(10, 0)
-  widthOfFilm                  Decimal?  @db.Decimal(10, 0)
-  thickness                    Decimal?  @db.Decimal(10, 0)
-  specificationOfMaterial      String?   @db.VarChar(120)
-  extrusionFormula             String?   @db.VarChar(20)
-  fgSConversionFactor          String?   @db.VarChar(120)
-  graphicOrderSheet            String?   @db.VarChar(120)
-  standardOfProduct            String?   @db.VarChar(120)
-  system_modified_at           DateTime? @db.DateTime(0)
-  system_id                    String?   @db.VarChar(255)
+    no                           String    @id @db.VarChar(20)
+    no_2                         String?   @db.VarChar(20)
+    description                  String?   @db.VarChar(100)
+    search_description           String?   @db.VarChar(100)
+    description_2                String?   @db.VarChar(50)
+    base_unitof_measure          String?   @db.VarChar(10)
+    type                         Int?
+    shelf_no                     String?   @db.VarChar(10)
+    costing_method               Int?      @db.TinyInt
+    unit_cost                    Decimal?  @db.Decimal(12, 0)
+    standard_cost                Decimal?  @db.Decimal(12, 0)
+    vendor_no                    String?   @db.VarChar(20)
+    vendor_item_no               String?   @db.VarChar(50)
+    lead_time_calculation        String?   @db.VarChar(32)
+    reorder_point                Decimal?  @db.Decimal(12, 0)
+    maximum_inventory            Decimal?  @db.Decimal(12, 0)
+    reorder_quantity             Decimal?  @db.Decimal(12, 0)
+    alternative_item_no          String?   @db.VarChar(20)
+    gross_weight                 Decimal?  @db.Decimal(12, 0)
+    net_weight                   Decimal?  @db.Decimal(12, 0)
+    unitsper_parcel              Decimal?  @db.Decimal(12, 0)
+    unit_volume                  Decimal?  @db.Decimal(12, 0)
+    blocked                      Boolean?
+    block_reason                 String?   @db.VarChar(250)
+    lot_size                     Decimal?  @db.Decimal(12, 0)
+    serial_nos                   String?   @db.VarChar(20)
+    scrap                        Decimal?  @db.Decimal(12, 0)
+    minimum_order_quantity       Decimal?  @db.Decimal(12, 0)
+    maximum_order_quantity       Decimal?  @db.Decimal(12, 0)
+    safety_stock_quantity        Decimal?  @db.Decimal(12, 0)
+    order_multiple               Decimal?  @db.Decimal(12, 0)
+    safety_lead_time             String?   @db.VarChar(32)
+    flushing_method              Int?      @db.TinyInt
+    replenishment_system         Int?      @db.TinyInt
+    sales_unitof_measure         String?   @db.VarChar(10)
+    purch_unitof_measure         String?   @db.VarChar(10)
+    reordering_policy            Int?      @db.TinyInt
+    manufacturing_policy         Int?      @db.TinyInt
+    rescheduling_period          String?   @db.VarChar(32)
+    lot_accumulation_period      String?   @db.VarChar(32)
+    stockkeeping_unit_exists     Boolean?
+    item_category_code           String?   @db.VarChar(20)
+    substitutes_exist            Boolean?
+    item_tracking_code           String?   @db.VarChar(10)
+    lot_nos                      String?   @db.VarChar(20)
+    expiration_calculation       String?   @db.VarChar(32)
+    bsvvas_name                  String?   @db.VarChar(250)
+    bsvacca_spec_of_product      String?   @db.VarChar(50)
+    bsvacca_purch_std_cost_price Boolean?
+    bsvacca_graphic_order_sheet  String?   @db.VarChar(50)
+    bsvacca_spec_of_material     String?   @db.VarChar(50)
+    bsvacca_standard_of_product  String?   @db.VarChar(50)
+    bsvacca_item_type            Int?
+    routing_no                   String?   @db.VarChar(20)
+    production_bom_no            String?   @db.VarChar(20)
+    originalUnitOfMeasure        String?   @db.VarChar(20)
+    itemType                     String?   @db.VarChar(50)
+    densityKgM                   Decimal?  @db.Decimal(10, 0)
+    convertFactorM2ToPouch       Decimal?  @db.Decimal(10, 0)
+    specificationOfProduct       String?   @db.VarChar(120)
+    convertFactorToMD            Decimal?  @db.Decimal(10, 0)
+    widthOfFilm                  Decimal?  @db.Decimal(10, 0)
+    thickness                    Decimal?  @db.Decimal(10, 0)
+    specificationOfMaterial      String?   @db.VarChar(120)
+    extrusionFormula             String?   @db.VarChar(20)
+    fgSConversionFactor          String?   @db.VarChar(120)
+    graphicOrderSheet            String?   @db.VarChar(120)
+    standardOfProduct            String?   @db.VarChar(120)
+    system_modified_at           DateTime? @db.DateTime(0)
+    system_id                    String?   @db.VarChar(255)
 
-  @@fulltext([description], map: "description")
-  @@fulltext([description], map: "description_2")
-  @@fulltext([description], map: "description_3")
-  @@fulltext([search_description], map: "search_description")
-  @@fulltext([search_description], map: "search_description_2")
-  @@fulltext([search_description], map: "search_description_3")
-  @@fulltext([search_description], map: "search_description_4")
-  @@fulltext([search_description], map: "search_description_5")
+    @@fulltext([description], map: "description")
+    @@fulltext([description], map: "description_2")
+    @@fulltext([description], map: "description_3")
+    @@fulltext([search_description], map: "search_description")
+    @@fulltext([search_description], map: "search_description_2")
+    @@fulltext([search_description], map: "search_description_3")
+    @@fulltext([search_description], map: "search_description_4")
+    @@fulltext([search_description], map: "search_description_5")
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_36_sales_header {
-  document_type           String?   @db.VarChar(20)
-  document_date           DateTime? @db.Date
-  sell_to_customer_no     String?   @db.VarChar(20)
-  no                      String?   @db.VarChar(20)
-  order_date              DateTime? @db.Date
-  due_date                DateTime? @db.Date
-  requested_delivery_date DateTime? @db.Date
-  bill_to_customer_no     String?   @db.VarChar(20)
-  bill_to_name            String?   @db.VarChar(100)
-  status                  String?   @db.VarChar(20)
-  salesperson_code        String?   @db.VarChar(20)
-  system_modified_at      DateTime? @db.DateTime(0)
-  amount                  Decimal?  @db.Decimal(12, 0)
-  amount_including_vat    Decimal?  @db.Decimal(12, 0)
-  system_id               String?   @db.VarChar(255)
+    document_type           Int       @default(0) @db.TinyInt
+    no                      String    @db.VarChar(20)
+    document_date           DateTime? @db.Date
+    sell_to_customer_no     String?   @db.VarChar(20)
+    order_date              DateTime? @db.Date
+    due_date                DateTime? @db.Date
+    requested_delivery_date DateTime? @db.Date
+    bill_to_customer_no     String?   @db.VarChar(20)
+    bill_to_name            String?   @db.VarChar(100)
+    status                  Int?      @db.TinyInt
+    salesperson_code        String?   @db.VarChar(20)
+    system_modified_at      DateTime? @db.DateTime(0)
+    amount                  Decimal?  @db.Decimal(12, 0)
+    amount_including_vat    Decimal?  @db.Decimal(12, 0)
+    system_id               String?   @db.VarChar(255)
 
-  @@ignore
+    @@id([document_type, no])
 }
 
 model tbl_38_purchase_header {
-  no                   String    @db.VarChar(20)
-  document_type        Int       @db.TinyInt
-  buy_from_vendor_no   String?   @db.VarChar(20)
-  document_date        DateTime? @db.Date
-  order_date           DateTime? @db.Date
-  pay_to_vendor_no     String?   @db.VarChar(20)
-  pay_to_name          String?   @db.VarChar(100)
-  status               String?   @db.VarChar(10)
-  amount               Decimal?  @db.Decimal(12, 0)
-  amount_including_vat Decimal?  @db.Decimal(12, 0)
-  vendor_order_no      String?   @db.VarChar(35)
-  vendor_shipment_no   String?   @db.VarChar(35)
-  system_modified_at   DateTime? @db.DateTime(0)
-  system_id            String?   @db.VarChar(255)
+    no                   String    @db.VarChar(20)
+    document_type        Int       @db.TinyInt
+    buy_from_vendor_no   String?   @db.VarChar(20)
+    document_date        DateTime? @db.Date
+    order_date           DateTime? @db.Date
+    pay_to_vendor_no     String?   @db.VarChar(20)
+    pay_to_name          String?   @db.VarChar(100)
+    status               String?   @db.VarChar(10)
+    amount               Decimal?  @db.Decimal(12, 0)
+    amount_including_vat Decimal?  @db.Decimal(12, 0)
+    vendor_order_no      String?   @db.VarChar(35)
+    vendor_shipment_no   String?   @db.VarChar(35)
+    system_modified_at   DateTime? @db.DateTime(0)
+    system_id            String?   @db.VarChar(255)
 
-  @@id([document_type, no])
+    @@id([document_type, no])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50100_bsv_acc_graphic_art_flexo {
-  gos                             String?   @db.VarChar(20)
-  version                         Int?
-  date                            DateTime? @db.Date
-  status                          Int?
-  customer                        String?   @db.VarChar(20)
-  customer_name                   String?   @db.VarChar(120)
-  item_no                         String?   @db.VarChar(20)
-  item_name                       String?   @db.VarChar(120)
-  customer_info_no                String?   @db.VarChar(30)
-  spec_of_product                 String?   @db.VarChar(30)
-  graphic                         String?   @db.VarChar(120)
-  customer_part_no                String?   @db.VarChar(120)
-  graphic_staff                   String?   @db.VarChar(20)
-  reference                       String?   @db.VarChar(120)
-  color_target                    String?   @db.VarChar(150)
-  content_matching                String?   @db.VarChar(150)
-  file_orientation                String?   @db.VarChar(20)
-  film_structure                  String?   @db.VarChar(20)
-  print_spec_color_1              String?   @db.VarChar(20)
-  lamination_web                  String?   @db.VarChar(20)
-  upc_number                      String?   @db.VarChar(120)
-  upc_direction                   Int?
-  acm_sfor_proof                  String?   @db.VarChar(20)
-  print_spec_location             String?   @db.VarChar(20)
-  press_wind                      String?   @db.VarChar(20)
-  printed_substrate               String?   @db.VarChar(20)
-  printed_white                   String?   @db.VarChar(20)
-  print_spec_color_2              String?   @db.VarChar(20)
-  print_spec_color_3              String?   @db.VarChar(20)
-  curve_set                       String?   @db.VarChar(20)
-  accredo_logo                    Int?
-  opacity                         String?   @db.VarChar(120)
-  color_build                     Bytes?    @db.Blob
-  eyemarks                        String?   @db.VarChar(20)
-  color_of_eyemarks               String?   @db.VarChar(20)
-  microdots                       String?   @db.VarChar(20)
-  easy_reg                        String?   @db.VarChar(20)
-  color_control_targets           String?   @db.VarChar(20)
-  eyeline                         String?   @db.VarChar(20)
-  locationof_eyemarks             String?   @db.VarChar(20)
-  sizeof_eyemarks                 String?   @db.VarChar(120)
-  locationof_microdots            String?   @db.VarChar(20)
-  locationof_easy_reg             String?   @db.VarChar(20)
-  locationof_color_control_target String?   @db.VarChar(20)
-  locationof_eyeline              String?   @db.VarChar(20)
-  art_repeat                      String?   @db.VarChar(120)
-  sleeve_size                     String?   @db.VarChar(20)
-  distortion                      String?   @db.VarChar(120)
-  repeat_distortion               String?   @db.VarChar(120)
-  target_web                      String?   @db.VarChar(120)
-  master_web                      Decimal?  @db.Decimal(12, 0)
-  step_repeat_info                String?   @db.VarChar(120)
-  ar                              String?   @db.VarChar(120)
-  ac                              String?   @db.VarChar(120)
-  stagger                         String?   @db.VarChar(120)
-  lane_1                          String?   @db.VarChar(120)
-  lane_2                          String?   @db.VarChar(120)
-  lane_3                          String?   @db.VarChar(120)
-  lane_4                          String?   @db.VarChar(120)
-  lane_5                          String?   @db.VarChar(120)
-  lane_6                          String?   @db.VarChar(120)
-  other_lanes                     String?   @db.VarChar(120)
-  print_to_start_os               String?   @db.VarChar(120)
-  print_to_start_ds               String?   @db.VarChar(120)
-  pouches                         Boolean?
-  roll_stock                      Boolean?
-  note                            Bytes?    @db.Blob
-  system_id                       String?   @db.VarChar(255)
-  system_modified_at              DateTime? @db.DateTime(0)
+    gos                             String    @db.VarChar(20)
+    version                         Int
+    date                            DateTime? @db.Date
+    status                          Int?
+    customer                        String?   @db.VarChar(20)
+    customer_name                   String?   @db.VarChar(120)
+    item_no                         String?   @db.VarChar(20)
+    item_name                       String?   @db.VarChar(120)
+    customer_info_no                String?   @db.VarChar(30)
+    spec_of_product                 String?   @db.VarChar(30)
+    graphic                         String?   @db.VarChar(120)
+    customer_part_no                String?   @db.VarChar(120)
+    graphic_staff                   String?   @db.VarChar(20)
+    reference                       String?   @db.VarChar(120)
+    color_target                    String?   @db.VarChar(150)
+    content_matching                String?   @db.VarChar(150)
+    file_orientation                String?   @db.VarChar(20)
+    film_structure                  String?   @db.VarChar(20)
+    print_spec_color_1              String?   @db.VarChar(20)
+    lamination_web                  String?   @db.VarChar(20)
+    upc_number                      String?   @db.VarChar(120)
+    upc_direction                   Int?
+    acm_sfor_proof                  String?   @db.VarChar(20)
+    print_spec_location             String?   @db.VarChar(20)
+    press_wind                      String?   @db.VarChar(20)
+    printed_substrate               String?   @db.VarChar(20)
+    printed_white                   String?   @db.VarChar(20)
+    print_spec_color_2              String?   @db.VarChar(20)
+    print_spec_color_3              String?   @db.VarChar(20)
+    curve_set                       String?   @db.VarChar(20)
+    accredo_logo                    Int?
+    opacity                         String?   @db.VarChar(120)
+    color_build                     Bytes?    @db.Blob
+    eyemarks                        String?   @db.VarChar(20)
+    color_of_eyemarks               String?   @db.VarChar(20)
+    microdots                       String?   @db.VarChar(20)
+    easy_reg                        String?   @db.VarChar(20)
+    color_control_targets           String?   @db.VarChar(20)
+    eyeline                         String?   @db.VarChar(20)
+    locationof_eyemarks             String?   @db.VarChar(20)
+    sizeof_eyemarks                 String?   @db.VarChar(120)
+    locationof_microdots            String?   @db.VarChar(20)
+    locationof_easy_reg             String?   @db.VarChar(20)
+    locationof_color_control_target String?   @db.VarChar(20)
+    locationof_eyeline              String?   @db.VarChar(20)
+    art_repeat                      String?   @db.VarChar(120)
+    sleeve_size                     String?   @db.VarChar(20)
+    distortion                      String?   @db.VarChar(120)
+    repeat_distortion               String?   @db.VarChar(120)
+    target_web                      String?   @db.VarChar(120)
+    master_web                      Decimal?  @db.Decimal(12, 0)
+    step_repeat_info                String?   @db.VarChar(120)
+    ar                              String?   @db.VarChar(120)
+    ac                              String?   @db.VarChar(120)
+    stagger                         String?   @db.VarChar(120)
+    lane_1                          String?   @db.VarChar(120)
+    lane_2                          String?   @db.VarChar(120)
+    lane_3                          String?   @db.VarChar(120)
+    lane_4                          String?   @db.VarChar(120)
+    lane_5                          String?   @db.VarChar(120)
+    lane_6                          String?   @db.VarChar(120)
+    other_lanes                     String?   @db.VarChar(120)
+    print_to_start_os               String?   @db.VarChar(120)
+    print_to_start_ds               String?   @db.VarChar(120)
+    pouches                         Boolean?
+    roll_stock                      Boolean?
+    note                            Bytes?    @db.Blob
+    system_id                       String?   @db.VarChar(255)
+    system_modified_at              DateTime? @db.DateTime(0)
 
-  @@ignore
+    @@id([gos, version])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50101_bsv_acc_graphic_color {
-  gos                     String? @db.VarChar(20)
-  version                 Int?
-  color_sequence          Int?
-  gravure_color_line_type Int?
-  col_1                   String? @db.VarChar(120)
-  col_2                   String? @db.VarChar(120)
-  col_3                   String? @db.VarChar(120)
-  col_4                   String? @db.VarChar(120)
-  col_5                   String? @db.VarChar(120)
-  col_6                   String? @db.VarChar(120)
-  col_7                   String? @db.VarChar(120)
-  col_8                   String? @db.VarChar(120)
-  col_9                   String? @db.VarChar(120)
-  col_10                  String? @db.VarChar(120)
-  system_id               String? @db.VarChar(255)
+    gos                     String  @db.VarChar(20)
+    version                 Int
+    color_sequence          Int
+    gravure_color_line_type Int?
+    col_1                   String? @db.VarChar(120)
+    col_2                   String? @db.VarChar(120)
+    col_3                   String? @db.VarChar(120)
+    col_4                   String? @db.VarChar(120)
+    col_5                   String? @db.VarChar(120)
+    col_6                   String? @db.VarChar(120)
+    col_7                   String? @db.VarChar(120)
+    col_8                   String? @db.VarChar(120)
+    col_9                   String? @db.VarChar(120)
+    col_10                  String? @db.VarChar(120)
+    system_id               String? @db.VarChar(255)
 
-  @@ignore
+    @@id([gos, version, color_sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50125_bsv_acc_graphic_art_gravure {
-  gos                             String?   @db.VarChar(20)
-  version                         Int?
-  status                          Int?
-  date                            DateTime? @db.Date
-  sample_description              String?   @db.VarChar(120)
-  item_no                         String?   @db.VarChar(20)
-  item_name                       String?   @db.VarChar(120)
-  customer_code                   String?   @db.VarChar(20)
-  customer_name                   String?   @db.VarChar(120)
-  customer_part_no                String?   @db.VarChar(120)
-  vendor_code                     String?   @db.VarChar(20)
-  vendor_name                     String?   @db.VarChar(120)
-  customer_info_no                String?   @db.VarChar(30)
-  spec_of_product                 String?   @db.VarChar(30)
-  employee_id                     String?   @db.VarChar(20)
-  employee_name                   String?   @db.VarChar(120)
-  press_wind                      String?   @db.VarChar(20)
-  in_color                        String?   @db.VarChar(20)
-  color_quantity                  String?   @db.VarChar(120)
-  graphic_ref                     String?   @db.VarChar(120)
-  graphic                         String?   @db.VarChar(120)
-  color_target                    String?   @db.VarChar(150)
-  content_matching                String?   @db.VarChar(150)
-  cylinder_order_date             DateTime? @db.Date
-  cylinder_delivery_date          DateTime? @db.Date
-  pdf_file_date                   DateTime? @db.Date
-  cromalin_date                   DateTime? @db.Date
-  approve_cust_and_factory        Boolean?
-  sample_approve                  String?   @db.VarChar(120)
-  sample_type                     Int?
-  printed_side                    Int?
-  sample_printed_self_check       Boolean?
-  samp_print_and_customer_approve Boolean?
-  customer_approve_the_color      Boolean?
-  cust_approve_standard_delta_e   Boolean?
-  dimension_width                 Int?
-  dimension_height                Int?
-  dimension_tolerence             Decimal?  @db.Decimal(12, 0)
-  unit_h                          Int?
-  unit_w                          Int?
-  film_size                       Int?
-  margin                          Int?
-  shaft_length                    Int?
-  shaft_perimeter                 Int?
-  graft_structure                 String?   @db.VarChar(120)
-  lamination_type                 Int?
-  barcode                         Int?
-  barcode_color                   String?   @db.VarChar(20)
-  barcode_no                      String?   @db.VarChar(120)
-  roll_bag                        Int?
-  bag_type                        Int?
-  eyemark_color                   String?   @db.VarChar(120)
-  graphic_design                  Boolean?
-  printed_sample                  Boolean?
-  shaft_core                      String?   @db.VarChar(120)
-  ink_brightness                  String?   @db.VarChar(120)
-  print_direction_1               Boolean?
-  print_direction_2               Boolean?
-  print_direction_3               Boolean?
-  print_direction_4               Boolean?
-  print_direction_5               Boolean?
-  print_direction_6               Boolean?
-  print_direction_7               Boolean?
-  print_direction_8               Boolean?
-  print_direction_9               Boolean?
-  eyemark_top                     Boolean?
-  eyemark_bottom                  Boolean?
-  eyemarks                        Boolean?  @map("2_eyemarks")
-  eyemarks_x                      Int?      @map("2_eyemarks_x")
-  eyemarks_y                      Int?      @map("2_eyemarks_y")
-  eyemarks_right_side             Boolean?  @map("1_eyemarks_right_side")
-  eyemarks_right_side_x           Int?      @map("1_eyemarks_right_side_x")
-  eyemarks_right_side_y           Int?      @map("1_eyemarks_right_side_y")
-  eyemarks_left_side              Boolean?  @map("1_eyemarks_left_side")
-  eyemarks_left_side_x            Int?      @map("1_eyemarks_left_side_x")
-  eyemarks_left_side_y            Int?      @map("1_eyemarks_left_side_y")
-  confirmation                    Bytes?    @db.Blob
-  note                            Bytes?    @db.Blob
-  system_id                       String?   @db.VarChar(255)
-  system_modified_at              DateTime? @db.DateTime(0)
+    gos                             String    @db.VarChar(20)
+    version                         Int
+    status                          Int?
+    date                            DateTime? @db.Date
+    sample_description              String?   @db.VarChar(120)
+    item_no                         String?   @db.VarChar(20)
+    item_name                       String?   @db.VarChar(120)
+    customer_code                   String?   @db.VarChar(20)
+    customer_name                   String?   @db.VarChar(120)
+    customer_part_no                String?   @db.VarChar(120)
+    vendor_code                     String?   @db.VarChar(20)
+    vendor_name                     String?   @db.VarChar(120)
+    customer_info_no                String?   @db.VarChar(30)
+    spec_of_product                 String?   @db.VarChar(30)
+    employee_id                     String?   @db.VarChar(20)
+    employee_name                   String?   @db.VarChar(120)
+    press_wind                      String?   @db.VarChar(20)
+    in_color                        String?   @db.VarChar(20)
+    color_quantity                  String?   @db.VarChar(120)
+    graphic_ref                     String?   @db.VarChar(120)
+    graphic                         String?   @db.VarChar(120)
+    color_target                    String?   @db.VarChar(150)
+    content_matching                String?   @db.VarChar(150)
+    cylinder_order_date             DateTime? @db.Date
+    cylinder_delivery_date          DateTime? @db.Date
+    pdf_file_date                   DateTime? @db.Date
+    cromalin_date                   DateTime? @db.Date
+    approve_cust_and_factory        Boolean?
+    sample_approve                  String?   @db.VarChar(120)
+    sample_type                     Int?
+    printed_side                    Int?
+    sample_printed_self_check       Boolean?
+    samp_print_and_customer_approve Boolean?
+    customer_approve_the_color      Boolean?
+    cust_approve_standard_delta_e   Boolean?
+    dimension_width                 Int?
+    dimension_height                Int?
+    dimension_tolerence             Decimal?  @db.Decimal(12, 0)
+    unit_h                          Int?
+    unit_w                          Int?
+    film_size                       Int?
+    margin                          Int?
+    shaft_length                    Int?
+    shaft_perimeter                 Int?
+    graft_structure                 String?   @db.VarChar(120)
+    lamination_type                 Int?
+    barcode                         Int?
+    barcode_color                   String?   @db.VarChar(20)
+    barcode_no                      String?   @db.VarChar(120)
+    roll_bag                        Int?
+    bag_type                        Int?
+    eyemark_color                   String?   @db.VarChar(120)
+    graphic_design                  Boolean?
+    printed_sample                  Boolean?
+    shaft_core                      String?   @db.VarChar(120)
+    ink_brightness                  String?   @db.VarChar(120)
+    print_direction_1               Boolean?
+    print_direction_2               Boolean?
+    print_direction_3               Boolean?
+    print_direction_4               Boolean?
+    print_direction_5               Boolean?
+    print_direction_6               Boolean?
+    print_direction_7               Boolean?
+    print_direction_8               Boolean?
+    print_direction_9               Boolean?
+    eyemark_top                     Boolean?
+    eyemark_bottom                  Boolean?
+    eyemarks                        Boolean?  @map("2_eyemarks")
+    eyemarks_x                      Int?      @map("2_eyemarks_x")
+    eyemarks_y                      Int?      @map("2_eyemarks_y")
+    eyemarks_right_side             Boolean?  @map("1_eyemarks_right_side")
+    eyemarks_right_side_x           Int?      @map("1_eyemarks_right_side_x")
+    eyemarks_right_side_y           Int?      @map("1_eyemarks_right_side_y")
+    eyemarks_left_side              Boolean?  @map("1_eyemarks_left_side")
+    eyemarks_left_side_x            Int?      @map("1_eyemarks_left_side_x")
+    eyemarks_left_side_y            Int?      @map("1_eyemarks_left_side_y")
+    confirmation                    Bytes?    @db.Blob
+    note                            Bytes?    @db.Blob
+    system_id                       String?   @db.VarChar(255)
+    system_modified_at              DateTime? @db.DateTime(0)
 
-  @@ignore
+    @@id([gos, version])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50126_bsv_acc_graphic_gravure_color {
-  gos                     String? @db.VarChar(20)
-  version                 Int?
-  color_sequence          Int?
-  gravure_color_line_type Int?
-  col_1                   String? @db.VarChar(120)
-  col_2                   String? @db.VarChar(120)
-  col_3                   String? @db.VarChar(120)
-  col_4                   String? @db.VarChar(120)
-  col_5                   String? @db.VarChar(120)
-  col_6                   String? @db.VarChar(120)
-  col_7                   String? @db.VarChar(120)
-  col_8                   String? @db.VarChar(120)
-  col_9                   String? @db.VarChar(120)
-  col_10                  String? @db.VarChar(120)
-  system_id               String? @db.VarChar(255)
+    gos                     String  @db.VarChar(20)
+    version                 Int
+    color_sequence          Int
+    gravure_color_line_type Int?
+    col_1                   String? @db.VarChar(120)
+    col_2                   String? @db.VarChar(120)
+    col_3                   String? @db.VarChar(120)
+    col_4                   String? @db.VarChar(120)
+    col_5                   String? @db.VarChar(120)
+    col_6                   String? @db.VarChar(120)
+    col_7                   String? @db.VarChar(120)
+    col_8                   String? @db.VarChar(120)
+    col_9                   String? @db.VarChar(120)
+    col_10                  String? @db.VarChar(120)
+    system_id               String? @db.VarChar(255)
 
-  @@ignore
+    @@id([gos, version, color_sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50128_bsv_acc_graphic_gravure_remark {
-  gos       String? @db.VarChar(20)
-  version   Int?
-  no        Int?
-  remark    String? @db.VarChar(120)
-  system_id String? @db.VarChar(255)
+    gos       String  @db.VarChar(20)
+    version   Int
+    no        Int
+    remark    String? @db.VarChar(120)
+    system_id String? @db.VarChar(255)
 
-  @@ignore
+    @@id([gos, version, no])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50130_bsv_acc_ga_gravure_printer {
-  gos                 String? @db.VarChar(20)
-  version             Int?
-  sequence            Int?
-  machine_center      String? @db.VarChar(20)
-  machine_center_name String? @db.VarChar(120)
-  speed               String? @db.VarChar(120)
-  gms                 String? @db.VarChar(120)
-  system_id           String? @db.VarChar(255)
+    gos                 String  @db.VarChar(20)
+    version             Int
+    sequence            Int
+    machine_center      String? @db.VarChar(20)
+    machine_center_name String? @db.VarChar(120)
+    speed               String? @db.VarChar(120)
+    gms                 String? @db.VarChar(120)
+    system_id           String? @db.VarChar(255)
 
-  @@ignore
+    @@id([gos, version, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50131_bsv_acc_ga_gravure_ink_consump {
-  gos             String?  @db.VarChar(20)
-  version         Int?
-  no              Int?
-  color           String?  @db.VarChar(120)
-  spec_of_product String?  @db.VarChar(20)
-  t_ram           String?  @db.VarChar(20)
-  cutting_angle   Decimal? @db.Decimal(12, 0)
-  depth           Decimal? @db.Decimal(12, 0)
-  ink_qty         Decimal? @db.Decimal(12, 0)
-  ink_factor      Decimal? @db.Decimal(12, 0)
-  system_id       String?  @db.VarChar(255)
+    gos             String   @db.VarChar(20)
+    version         Int
+    no              Int
+    color           String?  @db.VarChar(120)
+    spec_of_product String?  @db.VarChar(20)
+    t_ram           String?  @db.VarChar(20)
+    cutting_angle   Decimal? @db.Decimal(12, 0)
+    depth           Decimal? @db.Decimal(12, 0)
+    ink_qty         Decimal? @db.Decimal(12, 0)
+    ink_factor      Decimal? @db.Decimal(12, 0)
+    system_id       String?  @db.VarChar(255)
 
-  @@ignore
+    @@id([gos, version, no])
 }
 
 model tbl_50132_bsv_acc_spop {
-  spec_of_product                        String    @db.VarChar(20)
-  version_nno                            Int
-  gos_ref                                String?   @db.VarChar(20)
-  gos_version_no                         Int?
-  active                                 Boolean?
-  created_date                           DateTime? @db.Date
-  spop_type                              Int?
-  item_no                                String?   @db.VarChar(20)
-  productname                            String?   @db.VarChar(120)
-  customer_code                          String?   @db.VarChar(20)
-  customer_name                          String?   @db.VarChar(120)
-  uom                                    String?   @db.VarChar(10)
-  scrap_code                             String?   @db.VarChar(120)
-  width_of_film                          Int?
-  repeat_length_of_cylinder              Int?
-  repeat_length_of_fg                    Int?
-  width_of_illustration                  Int?
-  slitting_width_of_roll                 Int?
-  slitting_width_of_roll_2               String?   @db.VarChar(120)
-  slitting_width_of_roll_3               String?   @db.VarChar(120)
-  product_structure                      String?   @db.VarChar(120)
-  desc_for_product_structure             String?   @db.VarChar(150)
-  unit_h                                 Int?
-  unit_w                                 Int?
-  color_quantity                         String?   @db.VarChar(120)
-  color_number_note                      String?   @db.VarChar(120)
-  description                            String?   @db.VarChar(120)
-  typeofprinting                         Int?      @db.TinyInt
-  roll_bag                               Int?      @db.TinyInt
-  press_type                             Int?      @db.TinyInt
-  thickness_of_printingfilm              Int?
-  press_size_of_tolerence_min            Decimal?  @db.Decimal(12, 0)
-  press_size_of_tolerence_max            Decimal?  @db.Decimal(10, 0)
-  press_repeat_length_tolerance_min      Decimal?  @db.Decimal(12, 0)
-  press_repeat_length_tolerance_max      Decimal?  @db.Decimal(12, 0)
-  press_printing_registration_min        Decimal?  @db.Decimal(12, 0)
-  press_printing_registration_max        Decimal?  @db.Decimal(12, 0)
-  printing_film_name                     String?   @db.VarChar(120)
-  curring_time                           String?   @db.VarChar(120)
-  ink_name                               String?   @db.VarChar(120)
-  color_1                                String?   @db.VarChar(120)
-  color_2                                String?   @db.VarChar(120)
-  hardener                               String?   @db.VarChar(120)
-  stable_time_hours                      Decimal?  @db.Decimal(12, 0)
-  press_direction_1                      Boolean?
-  press_direction_2                      Boolean?
-  press_direction_3                      Boolean?
-  press_direction_4                      Boolean?
-  press_direction_5                      Boolean?
-  press_direction_6                      Boolean?
-  press_direction_7                      Boolean?
-  press_direction_8                      Boolean?
-  press_direction_9                      Boolean?
-  laminationtype                         Int?
-  have_solvent                           Boolean?
-  drylaminationfilm_1                    String?   @db.VarChar(20)
-  drylaminationfilm_2                    String?   @db.VarChar(20)
-  drylaminationfilm_3                    String?   @db.VarChar(20)
-  transparent_extrusion                  Boolean?
-  white_masterbatch_extrusion            Boolean?
-  lamination_with_al                     Boolean?
-  lamination_with_mpet                   Boolean?
-  the_bright_side                        Boolean?
-  the_matte_side                         Boolean?
-  semimatte_1                            Boolean?
-  matte_1                                Boolean?
-  glossy_1                               Boolean?
-  logo_1                                 Boolean?
-  semimatte_2                            Boolean?
-  matte_2                                Boolean?
-  glossy_2                               Boolean?
-  logo_2                                 Boolean?
-  laminating_materials_1                 String?   @db.VarChar(20)
-  laminating_materials_2                 String?   @db.VarChar(20)
-  laminating_materials_3                 String?   @db.VarChar(20)
-  pp                                     String?   @db.VarChar(120)
-  pe                                     String?   @db.VarChar(120)
-  lamination_size_of_tolerence_min       Decimal?  @db.Decimal(20, 6)
-  lamination_size_of_tolerence_max       Decimal?  @db.Decimal(20, 6)
-  lamination_repeat_length_tolerance_min Decimal?  @db.Decimal(20, 6)
-  lamination_repeat_length_tolerance_max Decimal?  @db.Decimal(20, 6)
-  thickness_tolerance                    Decimal?  @db.Decimal(20, 6)
-  total_of_thickness                     Decimal?  @db.Decimal(20, 6)
-  adhesive_in_period_1                   String?   @db.VarChar(120)
-  adhesive_in_period_2                   String?   @db.VarChar(120)
-  adhesive_in_period_3                   String?   @db.VarChar(120)
-  basicwgtofadhperiod_1                  Decimal?  @db.Decimal(20, 6)
-  basicwgtofadhperiod_2                  Decimal?  @db.Decimal(20, 6)
-  p_1_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
-  p_1_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
-  p_1_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
-  p_2_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
-  p_2_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
-  p_2_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
-  p_3_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
-  p_3_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
-  p_3_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
-  thickness_of_ldpe_1                    String?   @db.VarChar(120)
-  thickness_of_ldpe_2                    String?   @db.VarChar(120)
-  mix_masterbatch                        String?   @db.VarChar(120)
-  mix_nuc_surmasterbatch                 String?   @db.VarChar(120)
-  lamination_direction_1                 Boolean?
-  lamination_direction_2                 Boolean?
-  lamination_direction_3                 Boolean?
-  lamination_direction_4                 Boolean?
-  lamination_direction_5                 Boolean?
-  lamination_direction_6                 Boolean?
-  lamination_direction_7                 Boolean?
-  lamination_direction_8                 Boolean?
-  lamination_direction_9                 Boolean?
-  roll_length                            Int?
-  number_of_roll_bag                     Int?
-  slitting_roll_length_tolerence_min     Int?
-  slitting_roll_length_tolerence_max     Int?
-  slitting_cutting_tolerence_min         Int?
-  slitting_cutting_tolerence_max         Int?
-  paper_plastic_core                     String?   @db.VarChar(120)
-  number_of_joints                       Int?
-  slitting_direction_1                   Boolean?
-  slitting_direction_2                   Boolean?
-  slitting_direction_3                   Boolean?
-  slitting_direction_4                   Boolean?
-  slitting_direction_5                   Boolean?
-  slitting_direction_6                   Boolean?
-  slitting_direction_7                   Boolean?
-  slitting_direction_8                   Boolean?
-  slitting_direction_9                   Boolean?
-  pouching_direction                     Int?
-  pouching_dimension_tolerance_min       Decimal?  @db.Decimal(12, 0)
-  pouching_dimension_tolerance_max       Decimal?  @db.Decimal(12, 0)
-  sizeof_hole                            String?   @db.VarChar(120)
-  pouching_width                         Decimal?  @db.Decimal(12, 0)
-  seal_width_back                        Decimal?  @db.Decimal(12, 0)
-  back_seal                              Boolean?
-  above                                  Boolean?
-  below                                  Boolean?
-  left                                   Boolean?
-  right                                  Boolean?
-  spout                                  Boolean?
-  spout_inserting                        Boolean?
-  pouching_code                          String?   @db.VarChar(20)
-  pouching_name                          String?   @db.VarChar(120)
-  numbers_of_lane                        Int?
-  side_seal                              Int?
-  seal_width_side                        Decimal?  @db.Decimal(12, 0)
-  pouching_pallet_loading_spec           String?   @db.VarChar(120)
-  side_gusset_note                       String?   @db.VarChar(120)
-  note_for_positionof_cuts               String?   @db.VarChar(120)
-  bottom_gusset_width                    Int?
-  bottom_gusset_style                    Int?
-  length                                 Decimal?  @db.Decimal(12, 0)
-  seal_width_tolerance_min               Decimal?  @db.Decimal(12, 0)
-  seal_width_tolerance_max               Decimal?  @db.Decimal(12, 0)
-  top_seal                               Decimal?  @db.Decimal(12, 0)
-  zipper                                 Int?
-  sizeof_vent_hole                       Int?
-  pouching_sop_no                        Int?
-  standing_pouch                         Boolean?
-  bottom_seal                            Int?
-  packaging                              String?   @db.VarChar(120)
-  depth_of_bottom                        Int?
-  side_gusset_width                      Int?
-  pouch_bottom_gusset_width              Int?
-  pouching_curring_time                  Int?
-  rounded_corner_bag                     Boolean?
-  packing_instruction                    String?   @db.VarChar(120)
-  packing_for_pg                         Int?
-  system_modified_at                     DateTime? @db.DateTime(0)
-  press_printing_registration            Decimal?  @db.Decimal(12, 0)
-  system_id                              String?   @db.VarChar(255)
+    spec_of_product                        String    @db.VarChar(20)
+    version_nno                            Int
+    gos_ref                                String?   @db.VarChar(20)
+    gos_version_no                         Int?
+    active                                 Boolean?
+    created_date                           DateTime? @db.Date
+    spop_type                              Int?
+    item_no                                String?   @db.VarChar(20)
+    productname                            String?   @db.VarChar(120)
+    customer_code                          String?   @db.VarChar(20)
+    customer_name                          String?   @db.VarChar(120)
+    uom                                    String?   @db.VarChar(10)
+    scrap_code                             String?   @db.VarChar(120)
+    width_of_film                          Int?
+    repeat_length_of_cylinder              Int?
+    repeat_length_of_fg                    Int?
+    width_of_illustration                  Int?
+    slitting_width_of_roll                 Int?
+    slitting_width_of_roll_2               String?   @db.VarChar(120)
+    slitting_width_of_roll_3               String?   @db.VarChar(120)
+    product_structure                      String?   @db.VarChar(120)
+    desc_for_product_structure             String?   @db.VarChar(150)
+    unit_h                                 Int?
+    unit_w                                 Int?
+    color_quantity                         String?   @db.VarChar(120)
+    color_number_note                      String?   @db.VarChar(120)
+    description                            String?   @db.VarChar(120)
+    typeofprinting                         Int?      @db.TinyInt
+    roll_bag                               Int?      @db.TinyInt
+    press_type                             Int?      @db.TinyInt
+    thickness_of_printingfilm              Int?
+    press_size_of_tolerence_min            Decimal?  @db.Decimal(12, 0)
+    press_size_of_tolerence_max            Decimal?  @db.Decimal(10, 0)
+    press_repeat_length_tolerance_min      Decimal?  @db.Decimal(12, 0)
+    press_repeat_length_tolerance_max      Decimal?  @db.Decimal(12, 0)
+    press_printing_registration_min        Decimal?  @db.Decimal(12, 0)
+    press_printing_registration_max        Decimal?  @db.Decimal(12, 0)
+    printing_film_name                     String?   @db.VarChar(120)
+    curring_time                           String?   @db.VarChar(120)
+    ink_name                               String?   @db.VarChar(120)
+    color_1                                String?   @db.VarChar(120)
+    color_2                                String?   @db.VarChar(120)
+    hardener                               String?   @db.VarChar(120)
+    stable_time_hours                      Decimal?  @db.Decimal(12, 0)
+    press_direction_1                      Boolean?
+    press_direction_2                      Boolean?
+    press_direction_3                      Boolean?
+    press_direction_4                      Boolean?
+    press_direction_5                      Boolean?
+    press_direction_6                      Boolean?
+    press_direction_7                      Boolean?
+    press_direction_8                      Boolean?
+    press_direction_9                      Boolean?
+    laminationtype                         Int?
+    have_solvent                           Boolean?
+    drylaminationfilm_1                    String?   @db.VarChar(20)
+    drylaminationfilm_2                    String?   @db.VarChar(20)
+    drylaminationfilm_3                    String?   @db.VarChar(20)
+    transparent_extrusion                  Boolean?
+    white_masterbatch_extrusion            Boolean?
+    lamination_with_al                     Boolean?
+    lamination_with_mpet                   Boolean?
+    the_bright_side                        Boolean?
+    the_matte_side                         Boolean?
+    semimatte_1                            Boolean?
+    matte_1                                Boolean?
+    glossy_1                               Boolean?
+    logo_1                                 Boolean?
+    semimatte_2                            Boolean?
+    matte_2                                Boolean?
+    glossy_2                               Boolean?
+    logo_2                                 Boolean?
+    laminating_materials_1                 String?   @db.VarChar(20)
+    laminating_materials_2                 String?   @db.VarChar(20)
+    laminating_materials_3                 String?   @db.VarChar(20)
+    pp                                     String?   @db.VarChar(120)
+    pe                                     String?   @db.VarChar(120)
+    lamination_size_of_tolerence_min       Decimal?  @db.Decimal(20, 6)
+    lamination_size_of_tolerence_max       Decimal?  @db.Decimal(20, 6)
+    lamination_repeat_length_tolerance_min Decimal?  @db.Decimal(20, 6)
+    lamination_repeat_length_tolerance_max Decimal?  @db.Decimal(20, 6)
+    thickness_tolerance                    Decimal?  @db.Decimal(20, 6)
+    total_of_thickness                     Decimal?  @db.Decimal(20, 6)
+    adhesive_in_period_1                   String?   @db.VarChar(120)
+    adhesive_in_period_2                   String?   @db.VarChar(120)
+    adhesive_in_period_3                   String?   @db.VarChar(120)
+    basicwgtofadhperiod_1                  Decimal?  @db.Decimal(20, 6)
+    basicwgtofadhperiod_2                  Decimal?  @db.Decimal(20, 6)
+    p_1_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
+    p_1_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
+    p_1_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
+    p_2_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
+    p_2_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
+    p_2_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
+    p_3_dried_celcius_degree               Decimal?  @db.Decimal(20, 6)
+    p_3_drying_duration_hours              Decimal?  @db.Decimal(20, 6)
+    p_3_stable_duration_hours              Decimal?  @db.Decimal(20, 6)
+    thickness_of_ldpe_1                    String?   @db.VarChar(120)
+    thickness_of_ldpe_2                    String?   @db.VarChar(120)
+    mix_masterbatch                        String?   @db.VarChar(120)
+    mix_nuc_surmasterbatch                 String?   @db.VarChar(120)
+    lamination_direction_1                 Boolean?
+    lamination_direction_2                 Boolean?
+    lamination_direction_3                 Boolean?
+    lamination_direction_4                 Boolean?
+    lamination_direction_5                 Boolean?
+    lamination_direction_6                 Boolean?
+    lamination_direction_7                 Boolean?
+    lamination_direction_8                 Boolean?
+    lamination_direction_9                 Boolean?
+    roll_length                            Int?
+    number_of_roll_bag                     Int?
+    slitting_roll_length_tolerence_min     Int?
+    slitting_roll_length_tolerence_max     Int?
+    slitting_cutting_tolerence_min         Int?
+    slitting_cutting_tolerence_max         Int?
+    paper_plastic_core                     String?   @db.VarChar(120)
+    number_of_joints                       Int?
+    slitting_direction_1                   Boolean?
+    slitting_direction_2                   Boolean?
+    slitting_direction_3                   Boolean?
+    slitting_direction_4                   Boolean?
+    slitting_direction_5                   Boolean?
+    slitting_direction_6                   Boolean?
+    slitting_direction_7                   Boolean?
+    slitting_direction_8                   Boolean?
+    slitting_direction_9                   Boolean?
+    pouching_direction                     Int?
+    pouching_dimension_tolerance_min       Decimal?  @db.Decimal(12, 0)
+    pouching_dimension_tolerance_max       Decimal?  @db.Decimal(12, 0)
+    sizeof_hole                            String?   @db.VarChar(120)
+    pouching_width                         Decimal?  @db.Decimal(12, 0)
+    seal_width_back                        Decimal?  @db.Decimal(12, 0)
+    back_seal                              Boolean?
+    above                                  Boolean?
+    below                                  Boolean?
+    left                                   Boolean?
+    right                                  Boolean?
+    spout                                  Boolean?
+    spout_inserting                        Boolean?
+    pouching_code                          String?   @db.VarChar(20)
+    pouching_name                          String?   @db.VarChar(120)
+    numbers_of_lane                        Int?
+    side_seal                              Int?
+    seal_width_side                        Decimal?  @db.Decimal(12, 0)
+    pouching_pallet_loading_spec           String?   @db.VarChar(120)
+    side_gusset_note                       String?   @db.VarChar(120)
+    note_for_positionof_cuts               String?   @db.VarChar(120)
+    bottom_gusset_width                    Int?
+    bottom_gusset_style                    Int?
+    length                                 Decimal?  @db.Decimal(12, 0)
+    seal_width_tolerance_min               Decimal?  @db.Decimal(12, 0)
+    seal_width_tolerance_max               Decimal?  @db.Decimal(12, 0)
+    top_seal                               Decimal?  @db.Decimal(12, 0)
+    zipper                                 Int?
+    sizeof_vent_hole                       Int?
+    pouching_sop_no                        Int?
+    standing_pouch                         Boolean?
+    bottom_seal                            Int?
+    packaging                              String?   @db.VarChar(120)
+    depth_of_bottom                        Int?
+    side_gusset_width                      Int?
+    pouch_bottom_gusset_width              Int?
+    pouching_curring_time                  Int?
+    rounded_corner_bag                     Boolean?
+    packing_instruction                    String?   @db.VarChar(120)
+    packing_for_pg                         Int?
+    system_modified_at                     DateTime? @db.DateTime(0)
+    press_printing_registration            Decimal?  @db.Decimal(12, 0)
+    system_id                              String?   @db.VarChar(255)
 
-  @@id([spec_of_product, version_nno])
+    @@id([spec_of_product, version_nno])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50133_bsv_acc_spop_remark {
-  spop        String? @db.VarChar(20)
-  version_no  Int?
-  source_type String? @db.VarChar(20)
-  sequence    Int?
-  remark      String? @db.VarChar(120)
-  system_id   String? @db.VarChar(255)
+    spop        String  @db.VarChar(20)
+    version_no  Int
+    source_type String  @db.VarChar(20)
+    sequence    Int
+    remark      String? @db.VarChar(120)
+    system_id   String? @db.VarChar(255)
 
-  @@ignore
+    @@id([spop, version_no, source_type, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50136_bsv_acc_spop_print_cylinder {
-  spop          String? @db.VarChar(20)
-  version_no    Int?
-  sequence      Int?
-  cylinder_code String? @db.VarChar(20)
-  cylinder_name String? @db.VarChar(120)
-  location      Int?
-  remarks       String? @db.VarChar(120)
-  system_id     String? @db.VarChar(255)
+    spop          String  @db.VarChar(20)
+    version_no    Int
+    sequence      Int
+    cylinder_code String? @db.VarChar(20)
+    cylinder_name String? @db.VarChar(120)
+    location      Int?
+    remarks       String? @db.VarChar(120)
+    system_id     String? @db.VarChar(255)
 
-  @@ignore
+    @@id([spop, version_no, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50139_bsv_acc_spop_scrap {
-  spop                String? @db.VarChar(20)
-  version_no          Int?
-  sequence            Int?
-  operation_group     String? @db.VarChar(20)
-  operation_no        String? @db.VarChar(10)
-  description         String? @db.VarChar(120)
-  machine_center_no   String? @db.VarChar(20)
-  machine_center_name String? @db.VarChar(120)
-  system_id           String? @db.VarChar(255)
+    spop                String  @db.VarChar(20)
+    version_no          Int
+    sequence            Int
+    operation_group     String? @db.VarChar(20)
+    operation_no        String? @db.VarChar(10)
+    description         String? @db.VarChar(120)
+    machine_center_no   String? @db.VarChar(20)
+    machine_center_name String? @db.VarChar(120)
+    system_id           String? @db.VarChar(255)
 
-  @@ignore
+    @@id([spop, version_no, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50141_bsv_acc_spop_extrusion {
-  spop             String?  @db.VarChar(20)
-  version_no       Int?
-  sequence         Int?
-  content_id       String?  @db.VarChar(20)
-  content          String?  @db.VarChar(120)
-  value            String?  @db.VarChar(120)
-  description      String?  @db.VarChar(120)
-  corona_treatment Boolean?
-  system_id        String?  @db.VarChar(255)
+    spop             String   @db.VarChar(20)
+    version_no       Int
+    sequence         Int
+    content_id       String?  @db.VarChar(20)
+    content          String?  @db.VarChar(120)
+    value            String?  @db.VarChar(120)
+    description      String?  @db.VarChar(120)
+    corona_treatment Boolean?
+    system_id        String?  @db.VarChar(255)
 
-  @@ignore
+    @@id([spop, version_no, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50151_bsv_acc_change_control_request {
-  ccr_no                            String?   @db.VarChar(20)
-  version                           Int?
-  process                           Boolean?
-  raw_material                      Boolean?
-  centerline                        Boolean?
-  test_method                       Boolean?
-  total_approvals_details           Int?
-  total_collaborators_details       Int?
-  total_press_follow_actions        Int?
-  total_relative_dept_details       Int?
-  total_relative_dept_issue_details Int?
-  total_released_prod_order         Int?
-  building                          Boolean?
-  technical                         Boolean?
-  machine                           Boolean?
-  other                             Boolean?
-  other_details                     String?   @db.VarChar(120)
-  customer_code                     String?   @db.VarChar(20)
-  customer_name                     String?   @db.VarChar(120)
-  product_structure                 String?   @db.VarChar(120)
-  desciption_of_change_requested    Bytes?    @db.Blob
-  approval_status                   String?   @db.VarChar(20)
-  change_requirements_by_customer   Boolean?
-  change_for_improvement            Boolean?
-  reason_other                      Boolean?
-  reason_other_details              String?   @db.VarChar(120)
-  effect_to_sop                     Boolean?
-  effect_to_soppic                  String?   @db.VarChar(20)
-  sop_answer                        Bytes?    @db.Blob
-  effect_to_safety_food             Boolean?
-  effect_to_safety_food_pic         String?   @db.VarChar(20)
-  safety_food_answer                Bytes?    @db.Blob
-  effect_to_mix_up                  Boolean?
-  effect_to_mix_up_pic              String?   @db.VarChar(20)
-  effect_to_mix_up_answer           Bytes?    @db.Blob
-  system_modified_at                DateTime? @db.DateTime(0)
-  system_id                         String?   @db.VarChar(255)
+    ccr_no                            String    @db.VarChar(20)
+    version                           Int
+    process                           Boolean?
+    raw_material                      Boolean?
+    centerline                        Boolean?
+    test_method                       Boolean?
+    total_approvals_details           Int?
+    total_collaborators_details       Int?
+    total_press_follow_actions        Int?
+    total_relative_dept_details       Int?
+    total_relative_dept_issue_details Int?
+    total_released_prod_order         Int?
+    building                          Boolean?
+    technical                         Boolean?
+    machine                           Boolean?
+    other                             Boolean?
+    other_details                     String?   @db.VarChar(120)
+    customer_code                     String?   @db.VarChar(20)
+    customer_name                     String?   @db.VarChar(120)
+    product_structure                 String?   @db.VarChar(120)
+    desciption_of_change_requested    Bytes?    @db.Blob
+    approval_status                   String?   @db.VarChar(20)
+    change_requirements_by_customer   Boolean?
+    change_for_improvement            Boolean?
+    reason_other                      Boolean?
+    reason_other_details              String?   @db.VarChar(120)
+    effect_to_sop                     Boolean?
+    effect_to_soppic                  String?   @db.VarChar(20)
+    sop_answer                        Bytes?    @db.Blob
+    effect_to_safety_food             Boolean?
+    effect_to_safety_food_pic         String?   @db.VarChar(20)
+    safety_food_answer                Bytes?    @db.Blob
+    effect_to_mix_up                  Boolean?
+    effect_to_mix_up_pic              String?   @db.VarChar(20)
+    effect_to_mix_up_answer           Bytes?    @db.Blob
+    system_modified_at                DateTime? @db.DateTime(0)
+    system_id                         String?   @db.VarChar(255)
 
-  @@ignore
+    @@id([ccr_no, version])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50153_bsv_acc_ccr_relative_dept {
-  ccr_no          String? @db.VarChar(20)
-  ccr_verison     Int?
-  sequence        Int?
-  department_code String? @db.VarChar(20)
-  email           String? @db.VarChar(120)
-  source_type     Int?
-  department_name String? @db.VarChar(120)
-  system_id       String? @db.VarChar(255)
+    ccr_no          String  @db.VarChar(20)
+    ccr_verison     Int
+    sequence        Int
+    source_type     Int
+    department_code String? @db.VarChar(20)
+    email           String? @db.VarChar(120)
+    department_name String? @db.VarChar(120)
+    system_id       String? @db.VarChar(255)
 
-  @@ignore
+    @@id([ccr_no, ccr_verison, sequence, source_type])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50154_bsv_acc_ccr_follow_actions {
-  ccr_no       String?   @db.VarChar(20)
-  ccr_verison  Int?
-  sequence     Int?
-  process      String?   @db.VarChar(20)
-  followup     String?   @db.VarChar(120)
-  pic          String?   @db.VarChar(20)
-  deadline     DateTime? @db.Date
-  process_name String?   @db.VarChar(120)
-  system_id    String?   @db.VarChar(255)
+    ccr_no       String    @db.VarChar(20)
+    ccr_verison  Int
+    sequence     Int
+    process      String?   @db.VarChar(20)
+    followup     String?   @db.VarChar(120)
+    pic          String?   @db.VarChar(20)
+    deadline     DateTime? @db.Date
+    process_name String?   @db.VarChar(120)
+    system_id    String?   @db.VarChar(255)
 
-  @@ignore
+    @@id([ccr_no, ccr_verison, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50155_bsv_acc_ccr_approval {
-  ccr_no        String? @db.VarChar(20)
-  ccr_verison   Int?
-  sequence      Int?
-  level         Int?
-  approver      String? @db.VarChar(20)
-  email         String? @db.VarChar(120)
-  approver_name String? @db.VarChar(120)
-  job_title     String? @db.VarChar(120)
-  status        Int?
-  system_id     String? @db.VarChar(255)
+    ccr_no        String  @db.VarChar(20)
+    ccr_verison   Int
+    sequence      Int
+    level         Int?
+    approver      String? @db.VarChar(20)
+    email         String? @db.VarChar(120)
+    approver_name String? @db.VarChar(120)
+    job_title     String? @db.VarChar(120)
+    status        Int?
+    system_id     String? @db.VarChar(255)
 
-  @@ignore
+    @@id([ccr_no, ccr_verison, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50156_bsv_acc_ccr_collaborators {
-  ccr_no         String? @db.VarChar(20)
-  ccr_verison    Int?
-  sequence       Int?
-  approver       String? @db.VarChar(20)
-  email          String? @db.VarChar(120)
-  approver_name  String? @db.VarChar(120)
-  DepartmentCode String? @db.VarChar(20)
-  DepartmentName String? @db.VarChar(120)
-  status         Int?
-  systemId       String? @db.VarChar(255)
-  job_title      String? @db.VarChar(120)
-  level          Int?
+    ccr_no         String  @db.VarChar(20)
+    ccr_verison    Int
+    sequence       Int
+    approver       String? @db.VarChar(20)
+    email          String? @db.VarChar(120)
+    approver_name  String? @db.VarChar(120)
+    DepartmentCode String? @db.VarChar(20)
+    DepartmentName String? @db.VarChar(120)
+    status         Int?
+    systemId       String? @db.VarChar(255)
+    job_title      String? @db.VarChar(120)
+    level          Int?
 
-  @@ignore
+    @@id([ccr_no, ccr_verison, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50183_bsv_acc_som_header {
-  som_no               String?   @db.VarChar(20)
-  version_no           Int?
-  created_date         DateTime? @db.Date
-  material_code        String?   @db.VarChar(20)
-  material_description String?   @db.VarChar(120)
-  status               String?   @db.VarChar(20)
-  appearance           String?   @db.VarChar(120)
-  shelf_life           String?   @db.VarChar(120)
-  total_line           Int?
-  system_modified_at   DateTime? @db.DateTime(0)
-  system_id            String?   @db.VarChar(255)
+    som_no               String    @db.VarChar(20)
+    version_no           Int
+    created_date         DateTime? @db.Date
+    material_code        String?   @db.VarChar(20)
+    material_description String?   @db.VarChar(120)
+    status               Int?      @db.TinyInt
+    appearance           String?   @db.VarChar(120)
+    shelf_life           String?   @db.VarChar(120)
+    total_line           Int?
+    system_modified_at   DateTime? @db.DateTime(0)
+    system_id            String?   @db.VarChar(255)
 
-  @@ignore
+    @@id([som_no, version_no])
 }
 
 model tbl_50184_bsv_acc_som_line {
-  som_no                String  @db.VarChar(20)
-  version_no            Int
-  sequence              Int
-  raw_material          String? @db.VarChar(120)
-  material_name         String? @db.VarChar(120)
-  manufacturer          String? @db.VarChar(120)
-  typical_property_code String? @db.VarChar(20)
-  typical_properties    String? @db.VarChar(120)
-  unit                  String? @db.VarChar(20)
-  standard              String? @db.VarChar(120)
-  test_method_code      String? @db.VarChar(20)
-  test_method           String? @db.VarChar(120)
-  remark                String? @db.VarChar(120)
-  system_id             String? @db.VarChar(255)
+    som_no                String  @db.VarChar(20)
+    version_no            Int
+    sequence              Int
+    raw_material          String? @db.VarChar(120)
+    material_name         String? @db.VarChar(120)
+    manufacturer          String? @db.VarChar(120)
+    typical_property_code String? @db.VarChar(20)
+    typical_properties    String? @db.VarChar(120)
+    unit                  String? @db.VarChar(20)
+    standard              String? @db.VarChar(120)
+    test_method_code      String? @db.VarChar(20)
+    test_method           String? @db.VarChar(120)
+    remark                String? @db.VarChar(120)
+    system_id             String? @db.VarChar(255)
 
-  @@id([som_no, version_no, sequence])
+    @@id([som_no, version_no, sequence])
 }
 
 model tbl_50188_bsv_acc_sop_header {
-  sop_no             String    @db.VarChar(20)
-  version_no         Int
-  product_properties String?   @db.VarChar(20)
-  created_date       DateTime? @db.Date
-  status             String?   @db.VarChar(20)
-  customer_code      String?   @db.VarChar(20)
-  customer_name      String?   @db.VarChar(120)
-  item_code          String?   @db.VarChar(20)
-  item_name          String?   @db.VarChar(120)
-  remark             String?   @db.VarChar(120)
-  reference          String?   @db.VarChar(120)
-  total_line         Int?
-  system_modified_at DateTime? @db.DateTime(0)
-  system_id          String?   @db.VarChar(255)
+    sop_no             String    @db.VarChar(20)
+    version_no         Int
+    product_properties String?   @db.VarChar(20)
+    created_date       DateTime? @db.Date
+    status             String?   @db.VarChar(20)
+    customer_code      String?   @db.VarChar(20)
+    customer_name      String?   @db.VarChar(120)
+    item_code          String?   @db.VarChar(20)
+    item_name          String?   @db.VarChar(120)
+    remark             String?   @db.VarChar(120)
+    reference          String?   @db.VarChar(120)
+    total_line         Int?
+    system_modified_at DateTime? @db.DateTime(0)
+    system_id          String?   @db.VarChar(255)
 
-  @@id([sop_no, version_no])
+    @@id([sop_no, version_no])
 }
 
 model tbl_50189_bsv_acc_sop_line {
-  sop_no                String   @db.VarChar(20)
-  version_no            Int
-  sequence              Int
-  typical_property_code String?  @db.VarChar(20)
-  typical_properties    String?  @db.VarChar(120)
-  unit                  String?  @db.VarChar(20)
-  standard              String?  @db.VarChar(120)
-  test_method_code      String?  @db.VarChar(20)
-  test_method           String?  @db.VarChar(120)
-  internal_standard     String?  @db.VarChar(120)
-  remark                String?  @db.VarChar(120)
-  e_coa                 Boolean?
-  sampling              String?  @db.VarChar(120)
-  release_criteria      String?  @db.VarChar(120)
-  action_required       String?  @db.VarChar(120)
-  system_id             String?  @db.VarChar(255)
+    sop_no                String   @db.VarChar(20)
+    version_no            Int
+    sequence              Int
+    typical_property_code String?  @db.VarChar(20)
+    typical_properties    String?  @db.VarChar(120)
+    unit                  String?  @db.VarChar(20)
+    standard              String?  @db.VarChar(120)
+    test_method_code      String?  @db.VarChar(20)
+    test_method           String?  @db.VarChar(120)
+    internal_standard     String?  @db.VarChar(120)
+    remark                String?  @db.VarChar(120)
+    e_coa                 Boolean?
+    sampling              String?  @db.VarChar(120)
+    release_criteria      String?  @db.VarChar(120)
+    action_required       String?  @db.VarChar(120)
+    system_id             String?  @db.VarChar(255)
 
-  @@id([sop_no, version_no, sequence])
+    @@id([sop_no, version_no, sequence])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50223_bsv_acca_solvent {
-  SpOP        String? @db.VarChar(20)
-  VersionNo   Int?
-  Sequence    Int?
-  ItemNo      String? @db.VarChar(20)
-  ProductName String? @db.VarChar(120)
-  systemId    String? @db.VarChar(255)
+    SpOP        String  @db.VarChar(20)
+    VersionNo   Int
+    Sequence    Int
+    ItemNo      String? @db.VarChar(20)
+    ProductName String? @db.VarChar(120)
+    systemId    String? @db.VarChar(255)
 
-  @@ignore
+    @@id([SpOP, VersionNo, Sequence])
 }
 
 model tbl_50232_bsv_acc_spop_flexo {
-  spec_of_product                  String    @db.VarChar(20)
-  version_no                       Int
-  notes                            String?   @db.VarChar(120)
-  graphic                          String?   @db.VarChar(120)
-  color_sequence                   String?   @db.VarChar(120)
-  anilox                           String?   @db.VarChar(120)
-  backing                          String?   @db.VarChar(120)
-  plate_type                       String?   @db.VarChar(120)
-  colorof_upc_number               String?   @db.VarChar(120)
-  eyeline                          String?   @db.VarChar(120)
-  accredo_logo                     Int?      @db.TinyInt
-  printtostart_ds                  String?   @db.VarChar(120)
-  printtostart_os                  String?   @db.VarChar(120)
-  productname                      String?   @db.VarChar(120)
-  item_no                          String?   @db.VarChar(20)
-  press_surface_dir_s_1            Boolean?
-  press_surface_dir_s_2            Boolean?
-  press_surface_dir_s_3            Boolean?
-  press_surface_dir_s_4            Boolean?
-  press_surface_dir_s_5            Boolean?
-  press_surface_dir_s_6            Boolean?
-  press_surface_dir_s_7            Boolean?
-  press_surface_dir_s_8            Boolean?
-  lamination_type                  Int?      @db.TinyInt
-  have_solvent                     Boolean?
-  drylaminationfilm_1              String?   @db.VarChar(20)
-  drylaminationfilm_2              String?   @db.VarChar(20)
-  drylaminationfilm_3              String?   @db.VarChar(20)
-  transparent_extrusion            Boolean?
-  white_masterbatch_extrusion      Boolean?
-  laminationwith_al                Boolean?
-  laminationwith_mpet              Boolean?
-  the_bright_side                  Boolean?
-  the_matte_side                   Boolean?
-  semi_matte_1                     Boolean?
-  matte_1                          Boolean?
-  glossy_1                         Boolean?
-  logo_1                           Boolean?
-  semi_matte_2                     Boolean?
-  matte_2                          Boolean?
-  glossy_2                         Boolean?
-  logo_2                           Boolean?
-  laminating_materials_1           String?   @db.VarChar(120)
-  laminating_materials_2           String?   @db.VarChar(120)
-  laminating_materials_3           String?   @db.VarChar(120)
-  pp                               String?   @db.VarChar(120)
-  pe                               String?   @db.VarChar(120)
-  size_of_tolerence_min            Decimal?  @db.Decimal(12, 0)
-  size_of_tolerence_max            Decimal?  @db.Decimal(12, 0)
-  lam_repeatlen_tolerance_min      Decimal?  @db.Decimal(12, 0)
-  lam_repeatlen_tolerance_max      Decimal?  @db.Decimal(12, 0)
-  thickness_tolerance              String?   @db.VarChar(120)
-  total_of_thickness               Decimal?  @db.Decimal(12, 0)
-  adhesiveinperiod_1               String?   @db.VarChar(20)
-  adhesiveinperiod_2               String?   @db.VarChar(20)
-  adhesiveinperiod_3               String?   @db.VarChar(20)
-  basic_wgtof_adh_period_1         Decimal?  @db.Decimal(12, 0)
-  basic_wgtof_adh_period_2         Decimal?  @db.Decimal(12, 0)
-  p_1_dried                        Decimal?  @db.Decimal(12, 0)
-  p_1_drying_duration              Decimal?  @db.Decimal(12, 0)
-  p_1_stable_duration              Decimal?  @db.Decimal(12, 0)
-  p_2_dried                        Decimal?  @db.Decimal(12, 0)
-  p_2_drying_duration              Decimal?  @db.Decimal(12, 0)
-  p_2_stable_duration              Decimal?  @db.Decimal(12, 0)
-  p_3_dried                        Decimal?  @db.Decimal(12, 0)
-  p_3_drying_duration              Decimal?  @db.Decimal(12, 0)
-  p_3_stable_duration              Decimal?  @db.Decimal(12, 0)
-  thickness_of_ldpe_1              String?   @db.VarChar(120)
-  thickness_of_ldpe_2              String?   @db.VarChar(120)
-  mix_masterbatch                  String?   @db.VarChar(120)
-  mix_nuc_sur_masterbatch          String?   @db.VarChar(120)
-  lam_surface_dir_s_1              Boolean?
-  lam_surface_dir_s_2              Boolean?
-  lam_surface_dir_s_3              Boolean?
-  lam_surface_dir_s_4              Boolean?
-  lam_surface_dir_s_5              Boolean?
-  lam_surface_dir_s_6              Boolean?
-  lam_surface_dir_s_7              Boolean?
-  lam_surface_dir_s_8              Boolean?
-  web_width_1                      Int?
-  divided_into_2_images            String?   @db.VarChar(120)
-  web_width_tolerance_min          Decimal?  @db.Decimal(12, 0)
-  web_width_tolerance_max          Decimal?  @db.Decimal(12, 0)
-  core_size                        String?   @db.VarChar(120)
-  packing                          String?   @db.VarChar(120)
-  lengthof_role                    Int?
-  slitting_roll_len_tol_min        Decimal?  @db.Decimal(12, 0)
-  slitting_roll_len_tol_max        Decimal?  @db.Decimal(12, 0)
-  no_of_spec                       String?   @db.VarChar(120)
-  slitting_notes                   String?   @db.VarChar(120)
-  slit_surface_dir_s_1             Boolean?
-  slit_surface_dir_s_2             Boolean?
-  slit_surface_dir_s_3             Boolean?
-  slit_surface_dir_s_4             Boolean?
-  slit_surface_dir_s_5             Boolean?
-  slit_surface_dir_s_6             Boolean?
-  slit_surface_dir_s_7             Boolean?
-  slit_surface_dir_s_8             Boolean?
-  slit_reverse_dir_r_1             Boolean?
-  slit_reverse_dir_r_2             Boolean?
-  slit_reverse_dir_r_3             Boolean?
-  slit_reverse_dir_r_4             Boolean?
-  slit_reverse_dir_r_5             Boolean?
-  slit_reverse_dir_r_6             Boolean?
-  slit_reverse_dir_r_7             Boolean?
-  slit_reverse_dir_r_8             Boolean?
-  pouching_direction               Int?      @db.TinyInt
-  dimension_tolerance_min          Decimal?  @db.Decimal(12, 0)
-  dimension_tolerance_max          Decimal?  @db.Decimal(12, 0)
-  sizeof_hole                      String?   @db.VarChar(120)
-  pouching_width                   Decimal?  @db.Decimal(12, 0)
-  seal_width_back                  Decimal?  @db.Decimal(12, 0)
-  back_seal                        Boolean?
-  above                            Boolean?
-  below                            Boolean?
-  left                             Boolean?
-  right                            Boolean?
-  spout                            Boolean?
-  spout_inserting                  Boolean?
-  pouching_code                    String?   @db.VarChar(20)
-  pouching_name                    String?   @db.VarChar(120)
-  numbers_of_lane                  Int?
-  side_seal                        Int?      @db.TinyInt
-  seal_width_side                  Decimal?  @db.Decimal(12, 0)
-  packing_instruction              String?   @db.VarChar(120)
-  packingfor_pg                    Int?
-  pouching_pallet_loading_spec     String?   @db.VarChar(120)
-  side_gusset_note                 String?   @db.VarChar(120)
-  note_for_position_of_cuts        String?   @db.VarChar(120)
-  bottom_gusset_width              Int?
-  bottom_gusset_style              Int?      @db.TinyInt
-  length                           Decimal?  @db.Decimal(12, 0)
-  seal_width_tolerance_min         Decimal?  @db.Decimal(12, 0)
-  seal_width_tolerance_max         Decimal?  @db.Decimal(12, 0)
-  top_seal                         Decimal?  @db.Decimal(12, 0)
-  zipper                           Int?
-  sizeof_vent_hole                 Int?
-  pouching_sop_no                  Int?
-  standing_pouch                   Boolean?
-  bottom_seal                      Int?
-  packaging                        String?   @db.VarChar(120)
-  depth_of_botom_gusset            Int?
-  side_gusset_width                Int?
-  pouch_bottom_gusset_width        Int?
-  pouching_curring_time            Int?
-  rounded_corner_bag               Boolean?
-  ac                               Int?
-  customer_name                    String?   @db.VarChar(120)
-  customer_code                    String?   @db.VarChar(120)
-  gos_ref                          String?   @db.VarChar(120)
-  gos_version_no                   Int?
-  created_date                     DateTime? @db.DateTime(0)
-  hardener                         String?   @db.VarChar(120)
-  ink                              String?   @db.VarChar(120)
-  repeatlentolerance_max           Decimal?  @db.Decimal(12, 0)
-  repeatlentolerance_min           Decimal?  @db.Decimal(12, 0)
-  customer_repeat_tolerance        Decimal?  @db.Decimal(12, 0)
-  active                           Boolean?
-  ar                               Int?
-  color_quantity                   Int?
-  descfor_product_structure        String?   @db.VarChar(150)
-  gauge_gsm                        Decimal?  @db.Decimal(10, 0)
-  lam_surface_dir_r_1              Boolean?
-  lam_surface_dir_r_2              Boolean?
-  lam_surface_dir_r_3              Boolean?
-  lam_surface_dir_r_4              Boolean?
-  lam_surface_dir_r_5              Boolean?
-  lam_surface_dir_r_6              Boolean?
-  lam_surface_dir_r_7              Boolean?
-  lam_surface_dir_r_8              Boolean?
-  press_surface_dir_r_1            Boolean?
-  press_surface_dir_r_2            Boolean?
-  press_surface_dir_r_3            Boolean?
-  press_surface_dir_r_4            Boolean?
-  press_surface_dir_r_5            Boolean?
-  press_surface_dir_r_6            Boolean?
-  press_surface_dir_r_7            Boolean?
-  press_surface_dir_r_8            Boolean?
-  press_type                       String?   @db.VarChar(20)
-  printed_zone                     Int?
-  product_structure                String?   @db.VarChar(120)
-  roll_bag                         Int?      @db.TinyInt
-  sleeve_size                      Decimal?  @db.Decimal(10, 0)
-  system_modified_at               DateTime  @default(now()) @db.Timestamp(0)
-  total_lamination_remarks_details Int?
-  total_pouching_remarks_details   Int?
-  total_solvent_details            Int?
-  type_film                        String?   @db.VarChar(120)
-  upc                              String?   @db.VarChar(120)
-  width                            Decimal?  @db.Decimal(10, 0)
-  system_id                        String?   @db.VarChar(255)
+    spec_of_product                  String    @db.VarChar(20)
+    version_no                       Int
+    notes                            String?   @db.VarChar(120)
+    graphic                          String?   @db.VarChar(120)
+    color_sequence                   String?   @db.VarChar(120)
+    anilox                           String?   @db.VarChar(120)
+    backing                          String?   @db.VarChar(120)
+    plate_type                       String?   @db.VarChar(120)
+    colorof_upc_number               String?   @db.VarChar(120)
+    eyeline                          String?   @db.VarChar(120)
+    accredo_logo                     Int?      @db.TinyInt
+    printtostart_ds                  String?   @db.VarChar(120)
+    printtostart_os                  String?   @db.VarChar(120)
+    productname                      String?   @db.VarChar(120)
+    item_no                          String?   @db.VarChar(20)
+    press_surface_dir_s_1            Boolean?
+    press_surface_dir_s_2            Boolean?
+    press_surface_dir_s_3            Boolean?
+    press_surface_dir_s_4            Boolean?
+    press_surface_dir_s_5            Boolean?
+    press_surface_dir_s_6            Boolean?
+    press_surface_dir_s_7            Boolean?
+    press_surface_dir_s_8            Boolean?
+    lamination_type                  Int?      @db.TinyInt
+    have_solvent                     Boolean?
+    drylaminationfilm_1              String?   @db.VarChar(20)
+    drylaminationfilm_2              String?   @db.VarChar(20)
+    drylaminationfilm_3              String?   @db.VarChar(20)
+    transparent_extrusion            Boolean?
+    white_masterbatch_extrusion      Boolean?
+    laminationwith_al                Boolean?
+    laminationwith_mpet              Boolean?
+    the_bright_side                  Boolean?
+    the_matte_side                   Boolean?
+    semi_matte_1                     Boolean?
+    matte_1                          Boolean?
+    glossy_1                         Boolean?
+    logo_1                           Boolean?
+    semi_matte_2                     Boolean?
+    matte_2                          Boolean?
+    glossy_2                         Boolean?
+    logo_2                           Boolean?
+    laminating_materials_1           String?   @db.VarChar(120)
+    laminating_materials_2           String?   @db.VarChar(120)
+    laminating_materials_3           String?   @db.VarChar(120)
+    pp                               String?   @db.VarChar(120)
+    pe                               String?   @db.VarChar(120)
+    size_of_tolerence_min            Decimal?  @db.Decimal(12, 0)
+    size_of_tolerence_max            Decimal?  @db.Decimal(12, 0)
+    lam_repeatlen_tolerance_min      Decimal?  @db.Decimal(12, 0)
+    lam_repeatlen_tolerance_max      Decimal?  @db.Decimal(12, 0)
+    thickness_tolerance              String?   @db.VarChar(120)
+    total_of_thickness               Decimal?  @db.Decimal(12, 0)
+    adhesiveinperiod_1               String?   @db.VarChar(20)
+    adhesiveinperiod_2               String?   @db.VarChar(20)
+    adhesiveinperiod_3               String?   @db.VarChar(20)
+    basic_wgtof_adh_period_1         Decimal?  @db.Decimal(12, 0)
+    basic_wgtof_adh_period_2         Decimal?  @db.Decimal(12, 0)
+    p_1_dried                        Decimal?  @db.Decimal(12, 0)
+    p_1_drying_duration              Decimal?  @db.Decimal(12, 0)
+    p_1_stable_duration              Decimal?  @db.Decimal(12, 0)
+    p_2_dried                        Decimal?  @db.Decimal(12, 0)
+    p_2_drying_duration              Decimal?  @db.Decimal(12, 0)
+    p_2_stable_duration              Decimal?  @db.Decimal(12, 0)
+    p_3_dried                        Decimal?  @db.Decimal(12, 0)
+    p_3_drying_duration              Decimal?  @db.Decimal(12, 0)
+    p_3_stable_duration              Decimal?  @db.Decimal(12, 0)
+    thickness_of_ldpe_1              String?   @db.VarChar(120)
+    thickness_of_ldpe_2              String?   @db.VarChar(120)
+    mix_masterbatch                  String?   @db.VarChar(120)
+    mix_nuc_sur_masterbatch          String?   @db.VarChar(120)
+    lam_surface_dir_s_1              Boolean?
+    lam_surface_dir_s_2              Boolean?
+    lam_surface_dir_s_3              Boolean?
+    lam_surface_dir_s_4              Boolean?
+    lam_surface_dir_s_5              Boolean?
+    lam_surface_dir_s_6              Boolean?
+    lam_surface_dir_s_7              Boolean?
+    lam_surface_dir_s_8              Boolean?
+    web_width_1                      Int?
+    divided_into_2_images            String?   @db.VarChar(120)
+    web_width_tolerance_min          Decimal?  @db.Decimal(12, 0)
+    web_width_tolerance_max          Decimal?  @db.Decimal(12, 0)
+    core_size                        String?   @db.VarChar(120)
+    packing                          String?   @db.VarChar(120)
+    lengthof_role                    Int?
+    slitting_roll_len_tol_min        Decimal?  @db.Decimal(12, 0)
+    slitting_roll_len_tol_max        Decimal?  @db.Decimal(12, 0)
+    no_of_spec                       String?   @db.VarChar(120)
+    slitting_notes                   String?   @db.VarChar(120)
+    slit_surface_dir_s_1             Boolean?
+    slit_surface_dir_s_2             Boolean?
+    slit_surface_dir_s_3             Boolean?
+    slit_surface_dir_s_4             Boolean?
+    slit_surface_dir_s_5             Boolean?
+    slit_surface_dir_s_6             Boolean?
+    slit_surface_dir_s_7             Boolean?
+    slit_surface_dir_s_8             Boolean?
+    slit_reverse_dir_r_1             Boolean?
+    slit_reverse_dir_r_2             Boolean?
+    slit_reverse_dir_r_3             Boolean?
+    slit_reverse_dir_r_4             Boolean?
+    slit_reverse_dir_r_5             Boolean?
+    slit_reverse_dir_r_6             Boolean?
+    slit_reverse_dir_r_7             Boolean?
+    slit_reverse_dir_r_8             Boolean?
+    pouching_direction               Int?      @db.TinyInt
+    dimension_tolerance_min          Decimal?  @db.Decimal(12, 0)
+    dimension_tolerance_max          Decimal?  @db.Decimal(12, 0)
+    sizeof_hole                      String?   @db.VarChar(120)
+    pouching_width                   Decimal?  @db.Decimal(12, 0)
+    seal_width_back                  Decimal?  @db.Decimal(12, 0)
+    back_seal                        Boolean?
+    above                            Boolean?
+    below                            Boolean?
+    left                             Boolean?
+    right                            Boolean?
+    spout                            Boolean?
+    spout_inserting                  Boolean?
+    pouching_code                    String?   @db.VarChar(20)
+    pouching_name                    String?   @db.VarChar(120)
+    numbers_of_lane                  Int?
+    side_seal                        Int?      @db.TinyInt
+    seal_width_side                  Decimal?  @db.Decimal(12, 0)
+    packing_instruction              String?   @db.VarChar(120)
+    packingfor_pg                    Int?
+    pouching_pallet_loading_spec     String?   @db.VarChar(120)
+    side_gusset_note                 String?   @db.VarChar(120)
+    note_for_position_of_cuts        String?   @db.VarChar(120)
+    bottom_gusset_width              Int?
+    bottom_gusset_style              Int?      @db.TinyInt
+    length                           Decimal?  @db.Decimal(12, 0)
+    seal_width_tolerance_min         Decimal?  @db.Decimal(12, 0)
+    seal_width_tolerance_max         Decimal?  @db.Decimal(12, 0)
+    top_seal                         Decimal?  @db.Decimal(12, 0)
+    zipper                           Int?
+    sizeof_vent_hole                 Int?
+    pouching_sop_no                  Int?
+    standing_pouch                   Boolean?
+    bottom_seal                      Int?
+    packaging                        String?   @db.VarChar(120)
+    depth_of_botom_gusset            Int?
+    side_gusset_width                Int?
+    pouch_bottom_gusset_width        Int?
+    pouching_curring_time            Int?
+    rounded_corner_bag               Boolean?
+    ac                               Int?
+    customer_name                    String?   @db.VarChar(120)
+    customer_code                    String?   @db.VarChar(120)
+    gos_ref                          String?   @db.VarChar(120)
+    gos_version_no                   Int?
+    created_date                     DateTime? @db.DateTime(0)
+    hardener                         String?   @db.VarChar(120)
+    ink                              String?   @db.VarChar(120)
+    repeatlentolerance_max           Decimal?  @db.Decimal(12, 0)
+    repeatlentolerance_min           Decimal?  @db.Decimal(12, 0)
+    customer_repeat_tolerance        Decimal?  @db.Decimal(12, 0)
+    active                           Boolean?
+    ar                               Int?
+    color_quantity                   Int?
+    descfor_product_structure        String?   @db.VarChar(150)
+    gauge_gsm                        Decimal?  @db.Decimal(10, 0)
+    lam_surface_dir_r_1              Boolean?
+    lam_surface_dir_r_2              Boolean?
+    lam_surface_dir_r_3              Boolean?
+    lam_surface_dir_r_4              Boolean?
+    lam_surface_dir_r_5              Boolean?
+    lam_surface_dir_r_6              Boolean?
+    lam_surface_dir_r_7              Boolean?
+    lam_surface_dir_r_8              Boolean?
+    press_surface_dir_r_1            Boolean?
+    press_surface_dir_r_2            Boolean?
+    press_surface_dir_r_3            Boolean?
+    press_surface_dir_r_4            Boolean?
+    press_surface_dir_r_5            Boolean?
+    press_surface_dir_r_6            Boolean?
+    press_surface_dir_r_7            Boolean?
+    press_surface_dir_r_8            Boolean?
+    press_type                       String?   @db.VarChar(20)
+    printed_zone                     Int?
+    product_structure                String?   @db.VarChar(120)
+    roll_bag                         Int?      @db.TinyInt
+    sleeve_size                      Decimal?  @db.Decimal(10, 0)
+    system_modified_at               DateTime  @default(now()) @db.Timestamp(0)
+    total_lamination_remarks_details Int?
+    total_pouching_remarks_details   Int?
+    total_solvent_details            Int?
+    type_film                        String?   @db.VarChar(120)
+    upc                              String?   @db.VarChar(120)
+    width                            Decimal?  @db.Decimal(10, 0)
+    system_id                        String?   @db.VarChar(255)
 
-  @@id([spec_of_product, version_no])
+    @@id([spec_of_product, version_no])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model tbl_50234_bsv_acc_spop_flexo_solvent {
-  spec_of_product String? @db.VarChar(20)
-  version_no      Int?
-  sequence        Int?
-  productname     String? @db.VarChar(120)
-  item_no         String? @db.VarChar(20)
-  systemId        String? @db.VarChar(255)
+    spec_of_product String  @db.VarChar(20)
+    version_no      Int
+    sequence        Int
+    productname     String? @db.VarChar(120)
+    item_no         String? @db.VarChar(20)
+    systemId        String? @db.VarChar(255)
 
-  @@ignore
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model tbl_50255_bsv_acc_ccr_line {
-  ccr_no                 String?  @db.VarChar(20)
-  item_name              String?  @db.VarChar(120)
-  item_no                String?  @db.VarChar(20)
-  line_no                Int?
-  prod_order_line_no     Int?
-  quantity               Decimal? @db.Decimal(18, 2)
-  released_prod_order_no String?  @db.VarChar(20)
-  unitof_measure_code    String?  @db.VarChar(20)
-  version_no             Int?
-  system_id              String?  @db.VarChar(255)
-
-  @@ignore
-}
-
-model tbl_5405_production_order {
-  status                      String    @db.VarChar(50)
-  no                          String    @db.VarChar(20)
-  description                 String?   @db.VarChar(100)
-  search_description          String?   @db.VarChar(100)
-  description_2               String?   @db.VarChar(50)
-  source_type                 Int?
-  source_no                   String?   @db.VarChar(20)
-  variant_code                String?   @db.VarChar(10)
-  due_date                    DateTime? @db.Date
-  blocked                     Boolean?
-  quantity                    Decimal?  @db.Decimal(12, 0)
-  no_series                   String?   @db.VarChar(20)
-  planned_order_no            String?   @db.VarChar(20)
-  firm_planned_order_no       String?   @db.VarChar(20)
-  assigned_user_id            String?   @db.VarChar(50)
-  manuacturing_type           String?   @db.VarChar(50)
-  system_modified_at          DateTime? @db.DateTime(0)
-  system_id                   String?   @db.VarChar(255)
-  job_us                      Boolean?
-  total_prod_order_components Int?
-  total_prod_order_lines      Int?
-  total_prod_order_routings   Int?
-
-  @@id([status, no])
-}
-
-model tbl_5406_prod__order_line {
-  status                      String    @db.VarChar(50)
-  prod_order_no               String    @db.VarChar(20)
-  line_no                     Int
-  item_no                     String?   @db.VarChar(20)
-  variant_code                String?   @db.VarChar(10)
-  description                 String?   @db.VarChar(100)
-  description_2               String?   @db.VarChar(50)
-  location_code               String?   @db.VarChar(10)
-  bin_code                    String?   @db.VarChar(20)
-  quantity                    Decimal?  @db.Decimal(12, 0)
-  finished_quantity           Decimal?  @db.Decimal(12, 0)
-  remaining_quantity          Decimal?  @db.Decimal(12, 0)
-  due_date                    DateTime? @db.Date
-  starting_date               DateTime? @db.Date
-  starting_time               DateTime? @db.Time(0)
-  ending_date                 DateTime? @db.Date
-  ending_time                 DateTime? @db.Time(0)
-  production_bom_no           String?   @db.VarChar(20)
-  routing_no                  String?   @db.VarChar(20)
-  scrap                       Decimal?  @db.Decimal(12, 0)
-  reserved_quantity           Decimal?  @db.Decimal(12, 0)
-  unitof_measure_code         String?   @db.VarChar(10)
-  quantity_base               Decimal?  @db.Decimal(12, 0)
-  finished_qty_base           Decimal?  @db.Decimal(12, 0)
-  remaining_qty_base          Decimal?  @db.Decimal(12, 0)
-  reserved_qty_base           Decimal?  @db.Decimal(12, 0)
-  starting_date_time          DateTime? @db.DateTime(0)
-  ending_date_time            DateTime? @db.DateTime(0)
-  bsvacca_order_no            String?   @db.VarChar(20)
-  bsvacca_order_line_no       Int?
-  bsvacca_spec_of_product     String?   @db.VarChar(50)
-  bsvaccaccr_no               String?   @db.VarChar(50)
-  bsvacca_graphic_order_sheet String?   @db.VarChar(50)
-  system_id                   String?   @db.VarChar(255)
-  lane                        Int?
-  width_of_film               Decimal?  @db.Decimal(20, 6)
-  thickness                   Decimal?  @db.Decimal(20, 6)
-  density_kgm                 Decimal?  @db.Decimal(20, 6)
-  linear_meter_quantity       Int?
-
-  @@id([status, prod_order_no, line_no])
-}
-
-model tbl_5407_prod__order_component {
-  status                  String   @db.VarChar(50)
-  prod_order_no           String   @db.VarChar(20)
-  prod_order_line_no      Int
-  line_no                 Int
-  item_no                 String?  @db.VarChar(20)
-  description             String?  @db.VarChar(100)
-  unitof_measure_code     String?  @db.VarChar(10)
-  quantity                Decimal? @db.Decimal(12, 0)
-  routing_link_code       String?  @db.VarChar(10)
-  scrap_percent           Decimal? @db.Decimal(12, 0)
-  variant_code            String?  @db.VarChar(10)
-  expected_quantity       Decimal? @db.Decimal(12, 0)
-  location_code           String?  @db.VarChar(10)
-  bin_code                String?  @db.VarChar(20)
-  bsvacca_lot_size        String?  @db.VarChar(50)
-  bsvacca_min_consumption String?  @db.VarChar(50)
-  bsvacca_notes           String?  @db.VarChar(50)
-  bsvacca_quantity        String?  @db.VarChar(50)
-  system_id               String?  @db.VarChar(255)
-
-  @@id([status, prod_order_no, prod_order_line_no, line_no])
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model tbl_5409_prod__order_routing_line {
-  no                           String?  @db.VarChar(20)
-  routing_no                   String?  @db.VarChar(20)
-  routing_reference_no         Int?
-  operation_no                 String?  @db.VarChar(10)
-  next_operation_no            String?  @db.VarChar(30)
-  type                         String?  @db.VarChar(20)
-  work_center_no               String?  @db.VarChar(20)
-  work_center_group_code       String?  @db.VarChar(10)
-  description                  String?  @db.VarChar(100)
-  setup_time                   Decimal? @db.Decimal(12, 0)
-  run_time                     Decimal? @db.Decimal(12, 0)
-  wait_time                    Decimal? @db.Decimal(12, 0)
-  move_time                    Decimal? @db.Decimal(12, 0)
-  fixed_scrap_quantity         Decimal? @db.Decimal(12, 0)
-  lot_size                     Decimal? @db.Decimal(12, 0)
-  scrap_factor_perct           Decimal? @db.Decimal(12, 0)
-  setup_time_unitof_meas_code  String?  @db.VarChar(10)
-  run_time_unitof_meas_code    String?  @db.VarChar(10)
-  wait_time_unitof_meas_code   String?  @db.VarChar(10)
-  move_time_unitof_meas_code   String?  @db.VarChar(10)
-  concurrent_capacities        Decimal? @db.Decimal(12, 0)
-  routing_link_code            String?  @db.VarChar(10)
-  fixed_scrap_qty_accum        Decimal? @db.Decimal(12, 0)
-  scrap_factor_accumulated     Decimal? @db.Decimal(12, 0)
-  sequence_no_actual           Int?
-  direct_unit_cost             Decimal? @db.Decimal(12, 0)
-  indirect_cost_perct          Decimal? @db.Decimal(12, 0)
-  overhead_rate                Decimal? @db.Decimal(12, 0)
-  status                       String?  @db.VarChar(20)
-  prod_order_no                String?  @db.VarChar(20)
-  input_quantity               Decimal? @db.Decimal(12, 0)
-  routing_status               String?  @db.VarChar(20)
-  bsvacca_fixed_scrap_quantity Decimal? @db.Decimal(12, 0)
-  bsvacca_operation_group      String?  @db.VarChar(50)
-  bsvacca_scrap_group          String?  @db.VarChar(50)
-  bsvacca_speed                String?  @db.VarChar(50)
-  bsvacca_speed_uom_code       String?  @db.VarChar(10)
-  inputQuantityFEET            Decimal? @db.Decimal(16, 4)
-  outputFilmWidth              Decimal? @db.Decimal(16, 4)
-  outputQuantity               Decimal? @db.Decimal(16, 4)
-  outputQuantityFEET           Decimal? @db.Decimal(16, 4)
-  adjInputQtyFEET              Decimal? @db.Decimal(16, 4)
-  adjOutputQtyFEET             Decimal? @db.Decimal(16, 4)
-  actualOutputQty              Decimal? @db.Decimal(16, 4)
-  uomActualQty                 Decimal? @db.Decimal(16, 4)
-  feetActualQty                Decimal? @db.Decimal(16, 4)
-  actualOutputQtyLBS           Decimal? @db.Decimal(16, 4)
-  system_id                    String?  @db.VarChar(255)
-
-  @@ignore
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model tbl_6505_lot_no_information {
-  item_no      String?  @db.VarChar(20)
-  variant_code String?  @db.VarChar(10)
-  lot_no       String?  @db.VarChar(50)
-  blocked      Boolean?
-
-  @@ignore
-}
-
-model tbl_99000771_production_bom_header {
-  no                   String    @db.VarChar(20)
-  version_nos          String    @db.VarChar(20)
-  description          String?   @db.VarChar(100)
-  description_2        String?   @db.VarChar(50)
-  search_name          String?   @db.VarChar(100)
-  unit_of_measure_code String?   @db.VarChar(10)
-  low_level_code       Int?
-  comment              Boolean?
-  creation_date        DateTime? @db.Date
-  last_date_modified   DateTime? @db.Date
-  status               String?   @db.VarChar(50)
-  no_series            String?   @db.VarChar(20)
-  bom_group            String?   @db.VarChar(50)
-  bom_lot_size         Int?
-  item_no              String?   @db.VarChar(20)
-  bom_lot_size_pouch   Int?
-  system_modified_at   DateTime? @db.DateTime(0)
-  system_modified_by   String?   @db.VarChar(255)
-  system_id            String?   @db.VarChar(255)
-
-  @@id([no, version_nos])
-}
-
-model tbl_99000772_production_bom_line {
-  production_bom_no    String    @db.VarChar(20)
-  version_code         String    @db.VarChar(20)
-  line_no              Int
-  type                 String?   @db.VarChar(50)
-  no                   String?   @db.VarChar(20)
-  description          String?   @db.VarChar(100)
-  unit_of_measure_code String?   @db.VarChar(10)
-  quantity             Decimal?  @db.Decimal(18, 2)
-  position             String?   @db.VarChar(10)
-  position_2           String?   @db.VarChar(10)
-  position_3           String?   @db.VarChar(10)
-  lead_time_offset     String?   @db.VarChar(50)
-  routing_link_code    String?   @db.VarChar(10)
-  scrap                Decimal?  @db.Decimal(5, 2)
-  variant_code         String?   @db.VarChar(10)
-  comment              Boolean?
-  starting_date        DateTime? @db.Date
-  ending_date          DateTime? @db.Date
-  length               Decimal?  @db.Decimal(18, 2)
-  width                Decimal?  @db.Decimal(18, 2)
-  weight               Decimal?  @db.Decimal(18, 2)
-  depth                Decimal?  @db.Decimal(18, 2)
-  calculation_formula  String?   @db.VarChar(50)
-  quantity_per         Decimal?  @db.Decimal(18, 2)
-  lot_size             Int?
-  min_consumption      Decimal?  @db.Decimal(10, 0)
-  notes                String?   @db.Text
-  system_id            String?   @db.VarChar(255)
-
-  @@id([production_bom_no, version_code, line_no])
-}
-
-model tbl_sft_message {
-  no                Int       @id @default(autoincrement())
-  messageType       String?   @db.VarChar(20)
-  messageName       String?   @db.VarChar(20)
-  api               String?   @db.VarChar(20)
-  posted            Boolean?  @default(false)
-  postedDateAndTime DateTime? @db.DateTime(0)
-  error             Boolean?
-  errorText         String?   @db.Text
-  productionOrderNo String?   @db.VarChar(20)
-  prodOrderLineNo   String?   @db.VarChar(20)
-  fgNo              String?   @db.VarChar(20)
-  fgName            String?   @db.VarChar(120)
-  workCenterNo      String?   @db.VarChar(20)
-  machineCenterNo   String?   @db.VarChar(20)
-  operationNo       String?   @db.VarChar(20)
-  itemNo            String?   @db.VarChar(20)
-  variantCode       String?   @db.VarChar(20)
-  quantity          Decimal?  @db.Decimal(10, 2)
-  quantityKG        Decimal?  @db.Decimal(10, 2)
-  quantityM2        Decimal?  @db.Decimal(10, 2)
-  quantityMD        Decimal?  @db.Decimal(10, 2)
-  lotNo             String?   @db.VarChar(20)
-  graphicNo         String?   @db.VarChar(20)
-  operatorNo        String?   @db.VarChar(20)
-  operatorName      String?   @db.VarChar(120)
-  shift             String?   @db.VarChar(20)
-  sftDateTime       DateTime? @db.DateTime(0)
-  stopCode          String?   @db.VarChar(20)
-  scrapCode         String?   @db.VarChar(20)
-  scrapType         String?   @db.VarChar(20)
-  scrapItemNo       String?   @db.VarChar(20)
-  comments          String?   @db.Text
-  consumptQty       Decimal?  @db.Decimal(10, 2)
-  unit              String?   @db.VarChar(20)
-  traceId           String?   @db.Char(20)
-  outWidth          Decimal?  @db.Decimal(10, 2)
-  outSetNo          Int?
-  outWinder         String?   @db.Char(10)
-  outLaneNo         Int?
-  outConnectNo      Int?
-  outStatus         Int?
-  outDate           DateTime? @db.Date
-  netWeight         Decimal?  @db.Decimal(10, 0)
-  grossWeight       Decimal?  @db.Decimal(10, 0)
-  fromTime          DateTime? @db.DateTime(0)
-  toTime            DateTime? @db.DateTime(0)
+    @@id([spec_of_product, version_no, sequence])
 }
 
 model tbl_50236_qcs_references {
-  no                Int       @id @default(autoincrement())
-  document_type     Int?      @db.TinyInt
-  document_date     DateTime? @db.Date
-  document_no       String?   @db.VarChar(50)
-  purchase_order_no String?   @db.VarChar(50)
-  sale_order_no     String?   @db.VarChar(50)
-  prod_order_no     String?   @db.VarChar(50)
-  item_no           String?   @db.VarChar(50)
-  lot_no            String?   @db.VarChar(50)
-  quantity          Decimal?  @db.Decimal(20, 6)
-  status            Int?      @db.TinyInt
+    no                Int       @id @default(autoincrement())
+    document_type     Int?      @db.TinyInt
+    document_date     DateTime? @db.Date
+    document_no       String?   @db.VarChar(50)
+    purchase_order_no String?   @db.VarChar(50)
+    sale_order_no     String?   @db.VarChar(50)
+    prod_order_no     String?   @db.VarChar(50)
+    item_no           String?   @db.VarChar(50)
+    lot_no            String?   @db.VarChar(50)
+    quantity          Decimal?  @db.Decimal(20, 6)
+    status            Int?      @db.TinyInt
+}
+
+model tbl_50255_bsv_acc_ccr_line {
+    ccr_no                 String   @db.VarChar(20)
+    version_no             Int
+    line_no                Int
+    item_name              String?  @db.VarChar(120)
+    item_no                String?  @db.VarChar(20)
+    prod_order_line_no     Int?
+    quantity               Decimal? @db.Decimal(18, 2)
+    released_prod_order_no String?  @db.VarChar(20)
+    unitof_measure_code    String?  @db.VarChar(20)
+    system_id              String?  @db.VarChar(255)
+
+    @@id([ccr_no, version_no, line_no])
+}
+
+model tbl_5405_production_order {
+    status                      Int       @default(0) @db.TinyInt
+    no                          String    @db.VarChar(20)
+    description                 String?   @db.VarChar(100)
+    search_description          String?   @db.VarChar(100)
+    description_2               String?   @db.VarChar(50)
+    source_type                 Int?
+    source_no                   String?   @db.VarChar(20)
+    variant_code                String?   @db.VarChar(10)
+    due_date                    DateTime? @db.Date
+    blocked                     Boolean?
+    quantity                    Decimal?  @db.Decimal(12, 0)
+    no_series                   String?   @db.VarChar(20)
+    planned_order_no            String?   @db.VarChar(20)
+    firm_planned_order_no       String?   @db.VarChar(20)
+    assigned_user_id            String?   @db.VarChar(50)
+    manuacturing_type           String?   @db.VarChar(50)
+    system_modified_at          DateTime? @db.DateTime(0)
+    system_id                   String?   @db.VarChar(255)
+    job_us                      Boolean?
+    total_prod_order_components Int?
+    total_prod_order_lines      Int?
+    total_prod_order_routings   Int?
+
+    @@id([status, no])
+}
+
+model tbl_5406_prod__order_line {
+    status                      Int       @default(0) @db.TinyInt
+    prod_order_no               String    @db.VarChar(20)
+    line_no                     Int
+    item_no                     String?   @db.VarChar(20)
+    variant_code                String?   @db.VarChar(10)
+    description                 String?   @db.VarChar(100)
+    description_2               String?   @db.VarChar(50)
+    location_code               String?   @db.VarChar(10)
+    bin_code                    String?   @db.VarChar(20)
+    quantity                    Decimal?  @db.Decimal(12, 0)
+    finished_quantity           Decimal?  @db.Decimal(12, 0)
+    remaining_quantity          Decimal?  @db.Decimal(12, 0)
+    due_date                    DateTime? @db.Date
+    starting_date               DateTime? @db.Date
+    starting_time               DateTime? @db.Time(0)
+    ending_date                 DateTime? @db.Date
+    ending_time                 DateTime? @db.Time(0)
+    production_bom_no           String?   @db.VarChar(20)
+    routing_no                  String?   @db.VarChar(20)
+    scrap                       Decimal?  @db.Decimal(12, 0)
+    reserved_quantity           Decimal?  @db.Decimal(12, 0)
+    unitof_measure_code         String?   @db.VarChar(10)
+    quantity_base               Decimal?  @db.Decimal(12, 0)
+    finished_qty_base           Decimal?  @db.Decimal(12, 0)
+    remaining_qty_base          Decimal?  @db.Decimal(12, 0)
+    reserved_qty_base           Decimal?  @db.Decimal(12, 0)
+    starting_date_time          DateTime? @db.DateTime(0)
+    ending_date_time            DateTime? @db.DateTime(0)
+    bsvacca_order_no            String?   @db.VarChar(20)
+    bsvacca_order_line_no       Int?
+    bsvacca_spec_of_product     String?   @db.VarChar(50)
+    bsvaccaccr_no               String?   @db.VarChar(50)
+    bsvacca_graphic_order_sheet String?   @db.VarChar(50)
+    system_id                   String?   @db.VarChar(255)
+    lane                        Int?
+    width_of_film               Decimal?  @db.Decimal(20, 6)
+    thickness                   Decimal?  @db.Decimal(20, 6)
+    density_kgm                 Decimal?  @db.Decimal(20, 6)
+    linear_meter_quantity       Int?
+
+    @@id([status, prod_order_no, line_no])
+}
+
+model tbl_5407_prod__order_component {
+    status                  Int      @default(0) @db.TinyInt
+    prod_order_no           String   @db.VarChar(20)
+    prod_order_line_no      Int
+    line_no                 Int
+    item_no                 String?  @db.VarChar(20)
+    description             String?  @db.VarChar(100)
+    unitof_measure_code     String?  @db.VarChar(10)
+    quantity                Decimal? @db.Decimal(12, 0)
+    routing_link_code       String?  @db.VarChar(10)
+    scrap_percent           Decimal? @db.Decimal(12, 0)
+    variant_code            String?  @db.VarChar(10)
+    expected_quantity       Decimal? @db.Decimal(12, 0)
+    location_code           String?  @db.VarChar(10)
+    bin_code                String?  @db.VarChar(20)
+    bsvacca_lot_size        Int?
+    bsvacca_min_consumption Decimal? @db.Decimal(20, 6)
+    bsvacca_notes           String?  @db.VarChar(50)
+    bsvacca_quantity        Int?
+    system_id               String?  @db.VarChar(255)
+
+    @@id([status, prod_order_no, prod_order_line_no, line_no])
+}
+
+model tbl_5409_prod__order_routing_line {
+    status                       Int      @default(0) @db.TinyInt
+    prod_order_no                String   @db.VarChar(20)
+    routing_no                   String   @db.VarChar(20)
+    routing_reference_no         Int
+    operation_no                 String   @db.VarChar(10)
+    no                           String?  @db.VarChar(20)
+    next_operation_no            String?  @db.VarChar(30)
+    type                         Int?     @db.TinyInt
+    work_center_no               String?  @db.VarChar(20)
+    work_center_group_code       String?  @db.VarChar(10)
+    description                  String?  @db.VarChar(100)
+    setup_time                   Decimal? @db.Decimal(12, 0)
+    run_time                     Decimal? @db.Decimal(12, 0)
+    wait_time                    Decimal? @db.Decimal(12, 0)
+    move_time                    Decimal? @db.Decimal(12, 0)
+    fixed_scrap_quantity         Decimal? @db.Decimal(12, 0)
+    lot_size                     Decimal? @db.Decimal(12, 0)
+    scrap_factor_perct           Decimal? @db.Decimal(12, 0)
+    setup_time_unitof_meas_code  String?  @db.VarChar(10)
+    run_time_unitof_meas_code    String?  @db.VarChar(10)
+    wait_time_unitof_meas_code   String?  @db.VarChar(10)
+    move_time_unitof_meas_code   String?  @db.VarChar(10)
+    concurrent_capacities        Decimal? @db.Decimal(12, 0)
+    routing_link_code            String?  @db.VarChar(10)
+    fixed_scrap_qty_accum        Decimal? @db.Decimal(12, 0)
+    scrap_factor_accumulated     Decimal? @db.Decimal(12, 0)
+    sequence_no_actual           Int?
+    direct_unit_cost             Decimal? @db.Decimal(12, 0)
+    indirect_cost_perct          Decimal? @db.Decimal(12, 0)
+    overhead_rate                Decimal? @db.Decimal(12, 0)
+    input_quantity               Decimal? @db.Decimal(12, 0)
+    routing_status               Int?     @db.TinyInt
+    bsvacca_fixed_scrap_quantity Decimal? @db.Decimal(12, 0)
+    bsvacca_operation_group      String?  @db.VarChar(50)
+    bsvacca_scrap_group          String?  @db.VarChar(50)
+    bsvacca_speed                Int?
+    bsvacca_speed_uom_code       String?  @db.VarChar(20)
+    inputQuantityFEET            Decimal? @db.Decimal(16, 4)
+    outputFilmWidth              Decimal? @db.Decimal(16, 4)
+    outputQuantity               Decimal? @db.Decimal(16, 4)
+    outputQuantityFEET           Decimal? @db.Decimal(16, 4)
+    adjInputQtyFEET              Decimal? @db.Decimal(16, 4)
+    adjOutputQtyFEET             Decimal? @db.Decimal(16, 4)
+    actualOutputQty              Decimal? @db.Decimal(16, 4)
+    uomActualQty                 Decimal? @db.Decimal(16, 4)
+    feetActualQty                Decimal? @db.Decimal(16, 4)
+    actualOutputQtyLBS           Decimal? @db.Decimal(16, 4)
+    system_id                    String?  @db.VarChar(255)
+
+    @@id([status, prod_order_no, routing_no, routing_reference_no, operation_no])
+}
+
+model tbl_6505_lot_no_information {
+    item_no      String   @db.VarChar(20)
+    variant_code String   @db.VarChar(10)
+    lot_no       String   @db.VarChar(50)
+    blocked      Boolean?
+
+    @@id([item_no, variant_code, lot_no])
+}
+
+model tbl_99000771_production_bom_header {
+    no                   String    @id @db.VarChar(20)
+    version_nos          String    @db.VarChar(20)
+    description          String?   @db.VarChar(100)
+    description_2        String?   @db.VarChar(50)
+    search_name          String?   @db.VarChar(100)
+    unit_of_measure_code String?   @db.VarChar(10)
+    low_level_code       Int?
+    comment              Boolean?
+    creation_date        DateTime? @db.Date
+    last_date_modified   DateTime? @db.Date
+    status               Int?      @db.TinyInt
+    no_series            String?   @db.VarChar(20)
+    bom_group            String?   @db.VarChar(50)
+    bom_lot_size         Int?
+    item_no              String?   @db.VarChar(20)
+    bom_lot_size_pouch   Int?
+    system_modified_at   DateTime? @db.DateTime(0)
+    system_modified_by   String?   @db.VarChar(255)
+    system_id            String?   @db.VarChar(255)
+}
+
+model tbl_99000772_production_bom_line {
+    production_bom_no    String    @db.VarChar(20)
+    version_code         String    @db.VarChar(20)
+    line_no              Int
+    type                 Int?      @db.TinyInt
+    no                   String?   @db.VarChar(20)
+    description          String?   @db.VarChar(100)
+    unit_of_measure_code String?   @db.VarChar(10)
+    quantity             Decimal?  @db.Decimal(18, 2)
+    position             String?   @db.VarChar(10)
+    position_2           String?   @db.VarChar(10)
+    position_3           String?   @db.VarChar(10)
+    lead_time_offset     String?   @db.VarChar(50)
+    routing_link_code    String?   @db.VarChar(10)
+    scrap                Decimal?  @db.Decimal(5, 2)
+    variant_code         String?   @db.VarChar(10)
+    comment              Boolean?
+    starting_date        DateTime? @db.Date
+    ending_date          DateTime? @db.Date
+    length               Decimal?  @db.Decimal(18, 2)
+    width                Decimal?  @db.Decimal(18, 2)
+    weight               Decimal?  @db.Decimal(18, 2)
+    depth                Decimal?  @db.Decimal(18, 2)
+    calculation_formula  Int?      @db.TinyInt
+    quantity_per         Decimal?  @db.Decimal(18, 2)
+    lot_size             Int?
+    min_consumption      Decimal?  @db.Decimal(10, 0)
+    notes                String?   @db.Text
+    system_id            String?   @db.VarChar(255)
+
+    @@id([production_bom_no, version_code, line_no])
+}
+
+model tbl_sft_message {
+    no                Int       @id @default(autoincrement())
+    messageType       String?   @db.VarChar(20)
+    messageName       String?   @db.VarChar(20)
+    api               String?   @db.VarChar(20)
+    posted            Boolean?  @default(false)
+    postedDateAndTime DateTime? @db.DateTime(0)
+    error             Boolean?
+    errorText         String?   @db.Text
+    productionOrderNo String?   @db.VarChar(20)
+    prodOrderLineNo   String?   @db.VarChar(20)
+    fgNo              String?   @db.VarChar(20)
+    fgName            String?   @db.VarChar(120)
+    workCenterNo      String?   @db.VarChar(20)
+    machineCenterNo   String?   @db.VarChar(20)
+    operationNo       String?   @db.VarChar(20)
+    itemNo            String?   @db.VarChar(20)
+    variantCode       String?   @db.VarChar(20)
+    quantity          Decimal?  @db.Decimal(10, 2)
+    quantityKG        Decimal?  @db.Decimal(10, 2)
+    quantityM2        Decimal?  @db.Decimal(10, 2)
+    quantityMD        Decimal?  @db.Decimal(10, 2)
+    lotNo             String?   @db.VarChar(20)
+    graphicNo         String?   @db.VarChar(20)
+    operatorNo        String?   @db.VarChar(20)
+    operatorName      String?   @db.VarChar(120)
+    shift             String?   @db.VarChar(20)
+    sftDateTime       DateTime? @db.DateTime(0)
+    stopCode          String?   @db.VarChar(20)
+    scrapCode         String?   @db.VarChar(20)
+    scrapType         String?   @db.VarChar(20)
+    scrapItemNo       String?   @db.VarChar(20)
+    comments          String?   @db.Text
+    consumptQty       Decimal?  @db.Decimal(10, 2)
+    unit              String?   @db.VarChar(20)
+    traceId           String?   @db.Char(20)
+    outWidth          Decimal?  @db.Decimal(10, 2)
+    outSetNo          Int?
+    outWinder         String?   @db.Char(10)
+    outLaneNo         Int?
+    outConnectNo      Int?
+    outStatus         Int?
+    outDate           DateTime? @db.Date
+    netWeight         Decimal?  @db.Decimal(10, 0)
+    grossWeight       Decimal?  @db.Decimal(10, 0)
+    fromTime          DateTime? @db.DateTime(0)
+    toTime            DateTime? @db.DateTime(0)
 }
