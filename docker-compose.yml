@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+    sync-system-api:
+        build:
+            context: .
+        container_name: sync-system-api
+        ports:
+            - '8082:3000' # map 80 in container => 3000 in local
+        restart: always
+        volumes:
+            - app-data:/app
+        depends_on:
+            - redis
+    redis:
+        image: redis:alpine
+        container_name: redis
+        restart: always
+        ports:
+            - '6379:6379'
+        volumes:
+            - redis-data:/data
+        environment:
+            - REDIS_PASSWORD=${REDIS_PASSWORD} # Set the password from an environment variable
+        command: redis-server --requirepass ${REDIS_PASSWORD} #add the password to redis
+volumes:
+    app-data:
+    redis-data:

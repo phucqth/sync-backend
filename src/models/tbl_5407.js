@@ -1,0 +1,25 @@
+const tbl_5407 = {
+    name: 'tbl_5407_prod__order_component',
+    keys: ['status', 'prodOrderNo', 'prodOrderLineNo', 'lineNo'],
+    fields: {
+        status: 'Status',
+        prod_order_no: 'ProdOrderNo',
+        prod_order_line_no: 'ProdOrderLineNo',
+        line_no: 'LineNo',
+        item_no: 'ItemNo',
+        description: 'Description',
+        unitof_measure_code: 'UnitofMeasureCode',
+        routing_link_code: 'RoutingLinkCode',
+        quantity: 'Quantity',
+        scrap_percent: 'ScrapPercent.',
+        variant_code: 'VariantCode',
+        expected_quantity: 'ExpectedQuantity',
+        location_code: 'LocationCode',
+        bin_code: 'BinCode',
+        bsvacca_lot_size: 'BSVACCALotSize',
+        bsvacca_min_consumption: 'BSVACCAMinConsumption',
+        bsvacca_notes: 'BSVACCANotes',
+        bsvacca_quantity: 'BSVACCAQuantity',
+    },
+};
+export default tbl_5407;

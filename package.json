@@ -1,0 +1,43 @@
+{
+    "name": "api-service",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon  --loader esm-module-alias/loader --no-warnings index.js",
+        "prod": "nodemon  --loader esm-module-alias/loader --no-warnings index.js",
+        "pull-db": "prisma db pull && prisma generate"
+    },
+    "aliases": {
+        "@root": ".",
+        "@src": "./src",
+        "@models": "./src/models",
+        "@utils": "./src/utils",
+        "@controller": "./src/controller",
+        "@routes": "./src/routes"
+    },
+    "dependencies": {
+        "@fastify/cors": "^11.0.0",
+        "@fastify/jwt": "^9.0.4",
+        "@prisma/client": "^6.5.0",
+        "axios": "^1.7.9",
+        "bcrypt": "^5.1.1",
+        "boom": "^7.3.0",
+        "dotenv": "^16.4.7",
+        "esm-module-alias": "^2.2.1",
+        "fastify": "^5.1.0",
+        "ioredis": "^5.6.0",
+        "jsonwebtoken": "^9.0.2",
+        "lodash": "^4.17.21",
+        "mysql2": "^3.11.3",
+        "nodemon": "^3.1.7",
+        "redis": "^4.7.0",
+        "uuid": "^11.1.0",
+        "winston": "^3.17.0",
+        "winston-daily-rotate-file": "^5.0.0"
+    },
+    "devDependencies": {
+        "prisma": "^6.5.0"
+    }
+}

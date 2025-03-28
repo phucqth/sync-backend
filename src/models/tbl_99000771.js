@@ -1,0 +1,26 @@
+const tbl_99000771 = {
+    name: 'tbl_99000771_production_bom_header',
+    keys: ['no'],
+    fields: {
+        no: 'no',
+        description: 'description',
+        description_2: 'description_2',
+        search_name: 'search_name',
+        unit_of_measure_code: 'unit_of_measure_code',
+        low_level_code: 'low_level_code',
+        comment: 'comment',
+        creation_date: 'creation_date',
+        last_date_modified: 'last_date_modified',
+        status: 'status',
+        version_nos: 'version_nos',
+        // noSeries: 'noSeries',
+        bom_group: 'bom_group',
+        bom_lot_size: 'bom_lot_size',
+        item_no: 'item_no',
+        bom_lot_size_pouch: 'bom_lot_size_pouch',
+        system_modified_at: 'system_modified_at',
+        // systemModifiedBy: 'systemModifiedBy',
+        system_id: 'system_id',
+    },
+};
+export default tbl_99000771;
